@@ -26,7 +26,8 @@
          </div>
 
 
-         {{-- sarpanch section...  --}}
+
+      {{-- sarpanch section...  --}}
          <div class="site-section" >
           <div class="container">
             <div class="row mb-5 justify-content-center text-center">
@@ -37,20 +38,21 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 border-right">
     
-                <div class="feature-1 ">
+                <div class="feature-1">
                   {{-- <div class="icon-wrapper bg-primary">
                     <span class="flaticon-mortarboard text-white"></span>
                   </div> --}}
                   <div class="feature-1-content">
                     {{-- <h2>Personalize Learning</h2> --}}
                     <img src="{{asset('assets/images/sarpanch.webp')}}" class="img-fluid rounded" alt="">
+                    <h3>Name of sarpanch</h3>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
-                <div class="feature-1 ">
+              <div class="col-lg-6 col-md-6 mb-4 mb-lg-0 border-right">
+                <div class="feature-1">
                   {{-- <div class="icon-wrapper bg-primary">
                     <span class="flaticon-school-material text-white"></span>
                   </div> --}}
@@ -60,13 +62,13 @@
                   </div>
                 </div> 
               </div>
-              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 " >
                 <div class="feature-1 ">
                   {{-- <div class="icon-wrapper bg-primary">
                     <span class="flaticon-library text-white"></span>
                   </div> --}}
-                  <div class="feature-1-content align-items-center">
-                    <h2>Panch info</h2>
+                  <div class="feature-1-content pt-5 mt-5">
+                    <h2>Know more</h2>
                     <p><a href="#" class="btn btn-primary px-4 rounded-0">view</a></p>
                   </div>
                 </div> 

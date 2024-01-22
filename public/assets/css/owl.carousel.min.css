@@ -128,7 +128,7 @@
 }
 .owl-carousel .owl-video-wrapper {
     position: relative;
-    height: 100%;
+    height: 90%;
     background: #000;
 }
 .owl-carousel .owl-video-play-icon {
@@ -155,7 +155,7 @@
 }
 .owl-carousel .owl-video-tn {
     opacity: 0;
-    height: 100%;
+    height: 90%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -164,8 +164,8 @@
 .owl-carousel .owl-video-frame {
     position: relative;
     z-index: 1;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 
 

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @include('layouts.navbar')
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -55,5 +58,9 @@
     <script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
     <script src="{{asset('assets/js/jquery.mb.YTPlayer.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+
+
+
+    @include('layouts.footer')
 </body>
 </html>
