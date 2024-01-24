@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/events.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
@@ -28,6 +29,7 @@
     <link href="{{asset('assets/css/jquery.mb.YTPlayer.min.css')}}" media="all" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     
@@ -58,6 +60,8 @@
     <script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
     <script src="{{asset('assets/js/jquery.mb.YTPlayer.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/event.js')}}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 
