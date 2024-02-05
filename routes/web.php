@@ -17,6 +17,19 @@ Route::get('/', function () {
     return view('homapage');
 });
 
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+
+// Route::get('form', function(){
+//     return view('form');
+// })->name("form");
+
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

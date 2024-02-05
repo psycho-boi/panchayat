@@ -13,12 +13,42 @@ body {
   background: #000;
   color: #fff; }
 
+.bg-tricolor{
+  background-image: linear-gradient(to right bottom, #a11500, #c43e4d, #d66c8c, #dd9bc0, #e3c8e5, #d3cbe7, #c5cce5, #bdcdde, #7dadbf, #388f92, #006e58, #004c17);
+}
+
+
+.carousel-img{
+  margin: auto;
+  /* width: 100vw; */
+  height: 95vh;
+  object-fit:cover;
+  justify-content: center;
+  align-items: center;}
+  @media (max-width: 768px)  {
+    .carousel-img{
+      width: 100%;
+      height: 50vh;
+    }
+  }
+
+
+
+
+/* .carousel-heading{
+  background-color: red;
+  color: #388f92;
+} */
+
+
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease; }
   a:hover {
     text-decoration: none; }
+
+  
 
 .underline{
   text-decoration: underline !important;}
@@ -392,7 +422,7 @@ h1, h2, h3, h4, h5,
   right: 0;
   z-index: 2000;
   padding-top: 20px;
-  background: #fff;
+  background: #3f3d3d;
   height: calc(100vh);
   -webkit-transform: translateX(110%);
   -ms-transform: translateX(110%);
@@ -739,6 +769,7 @@ h1, h2, h3, h4, h5,
 .block-number-1 .icon {
   color: #fff;
   font-size: 2rem; }
+
 
 .ftco-testimonial-1 .ftco-testimonial-vcard img {
   width: 50px;

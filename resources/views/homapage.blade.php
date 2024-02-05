@@ -2,8 +2,51 @@
 
 @section('content')
 
+       {{-- Slider --}}
+       
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class=""></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img class="d-block carousel-img" src="{{asset('assets/images/person_2.jpg')}}" data-holder-rendered="true">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="carousel-heading">First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img class="d-block carousel-img" src="{{asset('assets/images/hero_1.jpg')}}" data-holder-rendered="true">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="carousel-heading">Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block carousel-img" src="{{asset('assets/images/hero_1.jpg')}}" data-holder-rendered="true">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="carousel-heading">Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-        <div class="hero-slide owl-carousel site-blocks-cover pb-3">
+
+
+
+        {{-- <div class="hero-slide owl-carousel site-blocks-cover pb-0">
            <div class="intro-section" style="background-image: url('{{asset('assets/images/hero_1.jpg')}}');">
              <div class="container">
                <div class="row align-items-center">
@@ -23,12 +66,18 @@
                </div>
              </div>
            </div>
-         </div>
+         </div> --}}
 
+      
+      <div class="container-fluid bg-danger p-0 m-0 pt-2">
+        <div class="row justify-content-center text-white text-center">
+            <p><strong>Timmings:  </strong>Monday to Friday 9AM TO 5PM & on Saturday 9AM TO 1PM</p>
+        </div>
+      </div>
 
 
       {{-- sarpanch section...  --}}
-         <div class="site-section" >
+         <div class="site-section mt-4" >
           <div class="container">
             {{-- <div class="row mb-0 justify-content-center text-center">
               <div class="col-lg-4 mb-2">
@@ -59,7 +108,9 @@
                   </div> --}}
                   <div class="feature-1-content">
                     <h2>Sarpanch Message</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
+                    <p>
+                    As the Sarpanch of Village Panchayat Pissurlem, it is a profound honour to hold this position of service. Our community is not only vibrant and continuously expanding but also resolute in its dedication to conserving our precious biodiversity, nurturing our unique village atmosphere, and safeguarding the rich heritage that defines our village.
+                  </p>
                   </div>
                 </div> 
               </div>
@@ -115,57 +166,6 @@
               <div class="col-md-4">
                 <div class="card b-h-box position-relative font-14 border-0 mb-4">
                   <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img10.jpg" alt="Card image">
-                  <div class="card-img-overlay overflow-hidden">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
-                        <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
-                        </div>
-                    </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Column -->
-              <!-- Column -->
-              <div class="col-md-4">
-                <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img11.jpg" alt="Card image">
-                  <div class="card-img-overlay overflow-hidden">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
-                        <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
-                        </div>
-                    </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Column -->
-              <!-- Column -->
-              <div class="col-md-4">
-                <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img11.jpg" alt="Card image">
-                  <div class="card-img-overlay overflow-hidden">
-                    <div class="d-flex align-items-center">
-                        <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
-                        <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
-                        </div>
-                    </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
-                  </div>
-                </div>
-              </div>
-              <!-- Column -->
-              <!-- Column -->
-              <div class="col-md-4">
-                <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img11.jpg" alt="Card image">
                   <div class="card-img-overlay overflow-hidden">
                     <div class="d-flex align-items-center">
                         <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
@@ -385,7 +385,7 @@
           </div>
           </div>
           </div>
-          <div class="col-lg-10 offset-lg-2 col-md-8 offset-md-4 col-7 offset-4">
+          <div class="col-lg-10 offset-lg-2 col-md-8 offset-md-4 col-7 offset-4 text-end">
             <a href="#" class="view">View All</a>
           </div>
           </div>
