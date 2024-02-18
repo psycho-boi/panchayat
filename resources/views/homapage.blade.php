@@ -71,7 +71,9 @@
       
       <div class="container-fluid bg-danger p-0 m-0 pt-2">
         <div class="row justify-content-center text-white text-center">
+          <marquee behavior="" direction="">  
             <p><strong>Timmings:  </strong>Monday to Friday 9AM TO 5PM & on Saturday 9AM TO 1PM</p>
+          </marquee>
         </div>
       </div>
 

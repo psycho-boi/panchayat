@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homapage');
-});
+// Route::get('/', function () {
+//     return view('homapage');
+// });
+
+
+Route::get('/', 'HomeController@index');
 
 
 Route::get('/form', function () {
@@ -29,6 +32,10 @@ Route::get('/form', function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
