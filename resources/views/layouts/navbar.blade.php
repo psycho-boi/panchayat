@@ -19,10 +19,10 @@
             <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> 
           </div> --}}
           <div class="col-lg-2 col-md-3 col-sm-3 text-center">
-            <img style="height: 12rem" src="{{asset('assets/images/logo1.png')}}" alt="">
+            <img style="height: 8rem" src="{{asset('assets/images/logo1.png')}}" alt="">
           </div>
           <div class="col-lg-6 col-md-6 col-sm-8 text-center text-md-left" style="">
-            <h1 class="" style="color: black">Villege Panchayat Pissurlem</h1>
+            <h1 class="" style="color: black">Village Panchayat Pissurlem</h1>
             <h4 class="" style="color: rgb(116, 110, 110)">Government of Goa </h4>
           </div>
         </div>
@@ -32,11 +32,14 @@
 
       <div class="container" >
         <div class="d-flex align-items-center">
-          {{-- <div class="site-logo">
-            <a href="index.html" class="d-block">
-              <img src="images/logo.jpg" alt="Image" class="img-fluid">
+          <div class="site-logo">
+            <a href="index.html" class="d-none">
+              {{-- <img src="{{asset('assets/images/.webp')}}" alt="Image" class="img-fluid"> --}}
+              <p>
+                VP Pissurlem<br/>
+              </p>
             </a>
-          </div> --}}
+          </div>
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
@@ -55,7 +58,7 @@
                   <a href="/form" class="nav-link text-left text-light">Forms</a>
                 </li>
                 <li>
-                  <a href="courses.html" class="nav-link text-left text-light">Gallery</a>
+                  <a href="courses.html" class="nav-link text-left text-light">Workshop</a>
                 </li>
                 <li>
                   <a href="courses.html" class="nav-link text-left text-light">Scheme</a>
@@ -80,16 +83,16 @@
             </nav>
 
           </div>
-          <div class="ml-auto">
+          {{-- <div class="ml-auto">
             <div class="social-wrap">
-              {{-- <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-facebook"></span></a>
               <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a> --}}
+              <a href="#"><span class="icon-linkedin"></span></a>
 
               <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
                 class="icon-menu h3"></span></a>
             </div>
-          </div>
+          </div> --}}
          
         </div>
       </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,21 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomepageController@index');
+
+Route::get('/', [App\Http\Controllers\HomepageController::class, 'index']);
 
 
 Route::get('/form', function () {
     return view('form');
+});
+
+Route::get('/user_registration', function(){
+    return view('user_registration');
+});
+
+Route::get('/about_us', function(){
+    return view('about_us');
 });
 
 
@@ -37,6 +48,3 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -12,21 +12,28 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <img class="d-block carousel-img" src="{{asset('assets/images/person_2.jpg')}}" data-holder-rendered="true">
+        <img class="d-block carousel-img" src="{{asset('assets/images/slide1.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-heading">First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5 class="carousel-heading">Village Panchayat Ghar</h5>
+          <p></p>
         </div>
       </div>
       <div class="carousel-item active">
-        <img class="d-block carousel-img" src="{{asset('assets/images/hero_1.jpg')}}" data-holder-rendered="true">
+        <img class="d-block carousel-img" src="{{asset('assets/images/slide2.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="carousel-heading">Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block carousel-img" src="{{asset('assets/images/hero_1.jpg')}}" data-holder-rendered="true">
+        <img class="d-block carousel-img" src="{{asset('assets/images/slide3.jpeg')}}" data-holder-rendered="true">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="carousel-heading">Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block carousel-img" src="{{asset('assets/images/slide4.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
           <h5 class="carousel-heading">Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -98,7 +105,7 @@
                   <div class="feature-1-content">
                     {{-- <h2>Personalize Learning</h2> --}}
                     <img src="{{asset('assets/images/sarpanch.webp')}}" class="img-fluid rounded" alt="">
-                    <h3 class="sarpanch-name">Name of sarpanch</h3>
+                    <h3 class="sarpanch-name">Devanand Vassant Parab</h3>
                     <h5>Sarpanch </h5>
                   </div>
                 </div>
@@ -111,8 +118,12 @@
                   <div class="feature-1-content">
                     <h2>Sarpanch Message</h2>
                     <p>
-                    As the Sarpanch of Village Panchayat Pissurlem, it is a profound honour to hold this position of service. Our community is not only vibrant and continuously expanding but also resolute in its dedication to conserving our precious biodiversity, nurturing our unique village atmosphere, and safeguarding the rich heritage that defines our village.
-                  </p>
+                      As the Sarpanch of Village Panchayat Pissurlem, it is a profound honour to hold this position of service. Our community is not only vibrant and continuously expanding but also resolute in its dedication to conserving our precious biodiversity, nurturing our unique village atmosphere, and safeguarding the rich heritage that defines our village.
+                    </p>
+                    <br>
+                    <p>
+                      At the very core of our identity lies a steadfast commitment to family values, which has been a cornerstone of our community for generations. Pissurlem stands adorned with its natural beauty, and our efforts to protect it are unwavering. Our village embraces the coexistence of nature and tradition, and it is this harmony that makes our home truly special.
+                     </p>
                   </div>
                 </div> 
               </div>
@@ -150,16 +161,16 @@
               <!-- Column -->
               <div class="col-md-4">
                 <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img9.jpg" alt="Card image">
+                  <img class="card-img" src="{{asset('assets/images/skill.jpeg')}}" alt="Card image">
                   <div class="card-img-overlay overflow-hidden">
                     <div class="d-flex align-items-center">
                         <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
                         <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
+                          <span class="ml-2">Feb 15, 2018</span>
                         </div>
                     </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+                    <h5 class="card-title my-3 font-weight-normal bg-dark py-2">Skill Development Workshop</h5>
+                    <p class="card-text">Lets make the  world a better place through technology.</p>
                   </div>
                 </div>
               </div>
@@ -167,16 +178,16 @@
               <!-- Column -->
               <div class="col-md-4">
                 <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img10.jpg" alt="Card image">
+                  <img class="card-img" src="{{asset('assets/images/plant.webp')}}" alt="Card image">
                   <div class="card-img-overlay overflow-hidden">
                     <div class="d-flex align-items-center">
                         <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
                         <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
+                          <span class="ml-2">Feb 12, 2018</span>
                         </div>
                     </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+                    <h5 class="card-title my-3 font-weight-normal bg-dark py-2">Plantation Drive</h5>
+                    <p class="card-text">To the greener world!</p>
                   </div>
                 </div>
               </div>
@@ -184,16 +195,16 @@
               <!-- Column -->
               <div class="col-md-4">
                 <div class="card b-h-box position-relative font-14 border-0 mb-4">
-                  <img class="card-img" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img11.jpg" alt="Card image">
+                  <img class="card-img" src="{{asset('assets/images/voter.avif')}}" alt="Card image">
                   <div class="card-img-overlay overflow-hidden">
                     <div class="d-flex align-items-center">
                         <span class="bg-danger-gradiant badge overflow-hidden text-white px-3 py-1 font-weight-normal">Charity, Ngo</span>
                         <div class="ml-2">
-                          <span class="ml-2">Feb 18, 2018</span>
+                          <span class="ml-2">Feb 1, 2024</span>
                         </div>
                     </div>
-                    <h5 class="card-title my-3 font-weight-normal">Help out the people who really need it on time.</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+                    <h5 class="card-title my-3 font-weight-normal bg-dark py-2">Voter Awareness Programme</h5>
+                    <p class="card-text">Every vote  counts!</p>
                   </div>
                 </div>
               </div>
@@ -227,48 +238,26 @@
                     </h2>
                   </div>
                 </div>
-        
-                <div class="box-news">
-                  <a aria-label="LunarXP Wins Space Innovator of the Year Award" href="#">
-                    <div class="row">
-                      <div class="col-lg-3 col-4 pr-1">
-                        <img alt="LunarXP Wins Space Innovator of the Year Award" class="img-fluid" src="{{asset('assets/images/hero_1.jpg')}}">
-                      </div>
-                      <div class="col-lg-9 col-8 news-heading">
-                        <h2 >LunarXP Wins Space Innovator of the Year Award</h2>
-                        <p>April 24, 2020</p>
-                      </div>
+
+                {{-- @dd($News); --}}
+                @foreach ($News as $News)
+                    <div class="box-news">
+                      <a aria-label="LunarXP Wins Space Innovator of the Year Award" href="#">
+                        <div class="row">
+                          <div class="col-lg-3 col-4 pr-1">
+                            <img alt="LunarXP Wins Space Innovator of the Year Award" class="img-fluid" src="{{asset('assets/images/house.jpg')}}">
+                          </div>
+                          <div class="col-lg-9 col-8 news-heading">
+                            <h4>{{$News->title}}</h4>
+                            <p>{{$News->created_at->format('M d, Y')}}</p>
+                          </div>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </div>
-        
-                <div class="box-news">
-                  <a aria-label="New Spending Bill Expands Funding for Space Exploration" href="#">
-                    <div class="row">
-                      <div class="col-lg-3 col-4 pr-1">
-                        <img alt="New Spending Bill Expands Funding for Space Exploration News Image" class="img-fluid" src="{{asset('assets/images/hero_1.jpg')}}">
-                      </div>
-                      <div class="col-lg-9 col-8 news-heading">
-                        <h2>New Spending Bill Expands Funding for Space Exploration</h2>
-                        <p>April 6, 2020 2:35 pm</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-        
-                <div class="box-news">
-                  <a aria-label="LunarXP Sets Target for First Mars Landing in 2030" href="#">
-                    <div class="row">
-                      <div class="col-lg-3 col-4 pr-1">
-                        <img alt="LunarXP Sets Target for First Mars Landing in 2030 News Image" class="img-fluid" src="{{asset('assets/images/hero_1.jpg')}}">
-                      </div>
-                      <div class="col-lg-9 col-8 news-heading">
-                        <h2 >LunarXP Sets Target for First Mars Landing in 2030</h2>
-                        <p>March 20, 2020</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                @endforeach
+                
+  
+            
         
                 <div class="col-lg-9 offset-lg-3 col-md-8 offset-md-4 col-7 offset-4">
                   <a href="#" class="view">View All</a>
@@ -277,7 +266,7 @@
         
               <!-- End of News Section -->
         
-              <!-- Alerts Section -->
+        <!-- Alerts Section -->
               <div class="col-lg-6 col-12 pr-xl-0 mt-5 mt-lg-0">
                 {{-- <h2 class="h1 mt-xl-n1 mb-4 mb-md-5 pb-2">workshop</h2> --}}
                 <div class="row mb-0 justify-content-center text-center">
@@ -287,48 +276,62 @@
                     </h2>
                   </div>
                 </div>
-        
+
                 <div class="box-news box-news--alerts">
+                  <a aria-label="Astronaut Leadership Training Canceled" href="#">
+                    <div class="row">
+                      <div class="col-lg-3 col-4 pr-1">
+                        <img src="{{asset('assets/images/agriculture.jpg')}}" class="img-fluid" alt="Astronaut Leadership Training Canceled">
+                      </div>
+                      <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
+                        <h4>Agricltural Workshop</h4>
+                        <p>Feb 15, 2024</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>  
+                <div class="box-news box-news--alerts">
+                  <a aria-label="Astronaut Leadership Training Canceled" href="#">
+                    <div class="row">
+                      <div class="col-lg-3 col-4 pr-1">
+                        <img src="{{asset('assets/images/health.jpg')}}" class="img-fluid" alt="Astronaut Leadership Training Canceled">
+                      </div>
+                      <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
+                        <h4>Health&Sanitation Workshop</h4>
+                        <p>Feb 2, 2024</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>  
+                <div class="box-news box-news--alerts">
+                  <a aria-label="Astronaut Leadership Training Canceled" href="#">
+                    <div class="row">
+                      <div class="col-lg-3 col-4 pr-1">
+                        <img src="{{asset('assets/images/woman.jpg')}}" class="img-fluid" alt="Astronaut Leadership Training Canceled">
+                      </div>
+                      <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
+                        <h4>Women Empowerment Workshop</h4>
+                        <p>Jan 28, 2024</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>  
+                
+                @foreach ($Workshop as $Workshop)
+                  <div class="box-news box-news--alerts">
                   <a aria-label="Astronaut Leadership Training Canceled" href="#">
                     <div class="row">
                       <div class="col-lg-3 col-4 pr-1">
                         <img src="{{asset('assets/images/hero_1.jpg')}}" class="img-fluid" alt="Astronaut Leadership Training Canceled">
                       </div>
                       <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
-                        <h2>Astronaut Leadership Training Canceled</h2>
-                        <p>April 20, 2020 2:46 pm</p>
+                        <h4>{{$Workshop->title}}</h4>
+                        <p>{{$Workshop->created_at->format('M d, Y')}}</p>
                       </div>
                     </div>
                   </a>
-                </div>
-        
-                <div class="box-news box-news--alerts">
-                  <a aria-label="Habitat Offerings to Include New Hydroponics Lab" href="#">
-                    <div class="row">
-                      <div class="col-lg-3 col-4 pr-1">
-                        <img src="{{asset('assets/images/hero_1.jpg')}}" class="img-fluid" alt="Habitat Offerings to Include New Hydroponics Lab">
-                      </div>
-                      <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
-                        <h2>Habitat Offerings to Include New Hydroponics Lab</h2>
-                        <p>March 20, 2020 2:45 pm</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-        
-                <div class="box-news box-news--alerts">
-                  <a aria-label="Lunar XPlorer transportation Delays" href="#">
-                    <div class="row">
-                      <div class="col-lg-3 col-4 pr-1">
-                        <img src="{{asset('assets/images/hero_1.jpg')}}" class="img-fluid" alt="NLunar XPlorer transportation Delays">
-                      </div>
-                      <div class="col-lg-9 col-8 pl-xl-4 pr-xl-0 news-heading">
-                        <h2>Lunar XPlorer transportation Delays</h2>
-                        <p>February 20, 2020 2:44 pm</p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                  </div>    
+                @endforeach
         
                 <div class="col-lg-10 offset-lg-2 col-md-8 offset-md-4 col-7 offset-4">
                   <a href="#" class="view">View All</a>
@@ -356,10 +359,10 @@
           <div class="row">
           <div class="col-lg-4 mb-3 d-flex align-items-stretch">
           <div class="card">
-          <img src="https://i.postimg.cc/28PqLLQC/dotonburi-canal-osaka-japan-700.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Dōtonbori Canal</h5>
-          <p class="card-text mb-4">Is a manmade waterway dug in the early 1600's and now displays many landmark commercial locals and vivid neon signs.</p>
+          <img src="{{asset('assets/images/ambulance.webp')}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column align-items-center">
+          <h3 class="card-title ">Ambulance</h3>
+          <p class="card-text mb-4"></p>
           <a href="#" class="btn btn-primary text-white mt-auto align-self-start">Book now</a>
           </div>
           </div>
@@ -367,10 +370,10 @@
           
           <div class="col-lg-4 mb-3 d-flex align-items-stretch">
           <div class="card">
-          <img src="https://i.postimg.cc/4xVY64PV/porto-timoni-double-beach-corfu-greece-700.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Porto Timoni Double Beach</h5>
-          <p class="card-text mb-4">Near Afionas village, on the west coast of Corfu island. The two beaches form two unique bays. The turquoise color of the sea contrasts to the high green hills surrounding it.</p>
+          <img src="{{asset('assets/images/hall.webp')}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column align-items-center">
+          <h3 class="card-title">Auditorium</h3>
+          <p class="card-text mb-4"></p>
           <a href="#" class="btn btn-primary text-white mt-auto align-self-start">Book now</a>
           </div>
           </div>
@@ -378,18 +381,22 @@
           
           <div class="col-lg-4 mb-3 d-flex align-items-stretch">
           <div class="card">
-          <img src="https://i.postimg.cc/TYyLPJWk/tritons-fountain-valletta-malta-700.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Tritons Fountain</h5>
-          <p class="card-text mb-4">Located just outside the City Gate of Valletta, Malta. It consists of three bronze Tritons holding up a large basin, balanced on a concentric base built out of concrete and clad in travertine slabs.</p>
+          <img src="{{asset('assets/images/ground.webp')}}" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column align-items-center">
+          <h3 class="card-title">Football Ground </h3>
+          <p class="card-text mb-4"></p>
           <a href="#" class="btn btn-primary text-white mt-auto align-self-start">Book now</a>
           </div>
           </div>
-          </div>
-          </div>
-          <div class="col-lg-10 offset-lg-2 col-md-8 offset-md-4 col-7 offset-4 text-end">
-            <a href="#" class="view">View All</a>
-          </div>
-          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-0 justify-content-end text-center">
+       <div class="col-lg-4 mb-0">
+         <h5 class="mb-0 ">
+           <a href="#" class="underline"><span>view all</span></a>
+         </h5>
+       </div>
+    </div>
           </section>
 @endsection

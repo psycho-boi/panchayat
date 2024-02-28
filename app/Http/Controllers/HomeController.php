@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
-use App\Models\Workshop
+
 
 
 class HomeController extends Controller
@@ -26,8 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $News = Item::latest()->take(3)->get();
-
-        return view('homapage');
+       return view('home');
     }
 }
+

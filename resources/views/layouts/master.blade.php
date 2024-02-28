@@ -9,7 +9,9 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="{{asset('assets/css/user_registration.css')}}">
+
     <link rel="stylesheet" href="{{asset('assets/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -29,7 +31,7 @@
     <link href="{{asset('assets/css/jquery.mb.YTPlayer.min.css')}}" media="all" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    {{-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> --}}
 </head>
 <body>
     
@@ -61,7 +63,8 @@
     <script src="{{asset('assets/js/jquery.mb.YTPlayer.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/event.js')}}"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('assets/js/user_registration.js')}}"></script>
+    {{-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --}}
 
 
 
