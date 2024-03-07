@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\HomepageController;
+// use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,15 @@ Route::get('/user_registration', function(){
 Route::get('/about_us', function(){
     return view('about_us');
 });
+
+
+Route::get('/adminhome', function(){
+    return view('admin.adminhome');
+});
+
+Route::get('/admin/news', 'NewsController@index')->name('news.index');
+Route::post('/admin/addnews','NewsController@store') -> name ('news.submit'); 
+Route::delete('/admin/deletenews/{id}','NewsController@destroy' )->name('news.delete');
 
 
 // Route::get('form', function(){
