@@ -12,20 +12,20 @@ class WorkshopController extends Controller
      */
     public function index()
     {
-        $newsItem = DB::table('news')
+        $workshopItem = DB::table('workshops')
             ->leftJoin('images', function ($join) {
-                $join->on('news.news_id', '=', 'images.foreign')
-                    ->where('images.type', '=', 'News');
+                $join->on('workshops.workshop_id', '=', 'images.foreign')
+                    ->where('images.type', '=', 'workshop');
             })
             ->leftJoin('docs', function ($join) {
-                $join->on('news.news_id', '=', 'docs.foreign')
-                    ->where('docs.type', '=', 'News');
+                $join->on('workshops.workshop_id', '=', 'docs.foreign')
+                    ->where('docs.type', '=', 'workshop');
             })
-            ->select('news.title as news_title', 'news.description', 'images.url as image_url', 'docs.url as doc_url')
-            ->orderBy('news.created_at', 'desc')
+            ->select('workshops.title as workshop_title', 'workshops.description', 'images.url as image_url', 'docs.url as doc_url')
+            ->orderBy('workshops.created_at', 'desc')
             ->get();
 
-        $newsItem->transform(function ($item) {
+        $workshopItem->transform(function ($item) {
             if ($item->image_url) {
                 $item->image_url = str_replace('public/', '', $item->image_url);
             }
@@ -35,11 +35,10 @@ class WorkshopController extends Controller
             return $item;
         });
 
-        return $newsItem;
+        return view('workshop.workshop', compact('workshopItem'));
 }
 
-    }
-
+    
     /**
      * Show the form for creating a new resource.
      */

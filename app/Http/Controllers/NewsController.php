@@ -42,9 +42,9 @@ class NewsController extends Controller
 
     public function index()
     {
-        $newsItem = DB::table('workshops')
+        $newsItem = DB::table('news')
         ->leftJoin('images', function ($join) {
-            $join->on('workshop.workshop_id', '=', 'images.foreign')
+            $join->on('news.news_id', '=', 'images.foreign')
                  ->where('images.type', '=', 'News');
         })
         ->select('news.title as news_title', 'news.description', 'images.url')

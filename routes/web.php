@@ -68,6 +68,9 @@ Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name(
 Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
 Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
 
+Route::get('/news/docs/{doc_url}', [WorkshopController::class, 'showDoc'])->name('workshop.doc');
+
+
 
 //meeting
 Route::get('/admin/meeting', [MeetingController::class, 'index'])->name('meeting.index');
@@ -77,10 +80,10 @@ Route::get('/admin/createmeeting', function(){ return view('meeting.addmeeting')
 
 
 //Notice
-Route::get('/admin/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
-Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name('workshop.store'); 
-Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
-Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
+// Route::get('/admin/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
+// Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name('workshop.store'); 
+// Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
+// Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
 
 
 // //scheme

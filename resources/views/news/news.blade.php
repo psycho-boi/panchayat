@@ -35,7 +35,7 @@
                         <th>Sr no.</th>
                         <th>Title</th>
                         <th>Photo</th>
-                        {{-- <th>jiii</th> --}}
+                        
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -52,7 +52,7 @@
                         </td>
                         <td>{{$i}}</td>
                         <td>{{$news->news_title}}</td>
-                        {{-- <td></td> --}}
+                        
                         <td>        
 
                                  @if($news->url)

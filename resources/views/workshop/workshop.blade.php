@@ -1,4 +1,4 @@
-{{-- @extends('admin.master');
+@extends('admin.master');
 
 @section('content')
 
@@ -35,7 +35,7 @@
                         <th>Sr no.</th>
                         <th>Title</th>
                         <th>Photo</th>
-                        {{-- <th>jiii</th> --}}
+                        <th>Doc</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -52,13 +52,21 @@
                         </td>
                         <td>{{$i}}</td>
                         <td>{{$ws->workshop_title}}</td>
-                        {{-- <td></td> --}}
                         <td>        
 
-                                 @if($ws->url)
-                                     <img src="{{asset('storage/'. $news->url)}}" alt="no image found">
+                                 @if($ws->image_url)
+                                     <img src="{{asset('storage/'. $ws->image_url)}}" alt="no image found">
+                                 @else
+                                     No Image
                                  @endif
 
+                        </td>
+                        <td>
+                            @if ($ws->doc_url)
+                                <a href="{{ route('workshop.doc', ['doc_url' => $ws->doc_url]) }}" class="btn btn-primary" target="_blank">View Document</a>
+                            @else
+                                No Document
+                            @endif
                         </td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="">
@@ -90,6 +98,6 @@
     </div>        
 </div>
 
-@endsection --}}
+@endsection
 
-@dd('')
+{{-- @dd($workshopItem); --}}
