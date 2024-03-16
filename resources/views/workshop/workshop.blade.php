@@ -1,11 +1,11 @@
-@extends('admin.master');
+{{-- @extends('admin.master');
 
 @section('content')
 
   <div class="row mb-0 justify-content-center text-center">
     <div class="col-lg-4 mb-2">
       <h2 class="section-title-underline mb-5">
-        <span>Manage News</span>
+        <span>Manage Workshop</span>
       </h2>
     </div>
 </div>
@@ -42,7 +42,7 @@
                 <tbody>
                     
                     {{$i=1}}
-                    @foreach ($News as $News)
+                    @foreach ($workshopItem as $ws)
                      <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -51,12 +51,14 @@
                             </span>
                         </td>
                         <td>{{$i}}</td>
-                        <td>{{$News->title}}</td>
+                        <td>{{$ws->workshop_title}}</td>
                         {{-- <td></td> --}}
-                        <td>
-                            <div class="col-lg-3 col-4 pr-1">
-                                <img alt="LunarXP Wins Space Innovator of the Year Award" class="img-fluid" src="{{asset('assets/images/house.jpg')}}">
-                            </div>
+                        <td>        
+
+                                 @if($ws->url)
+                                     <img src="{{asset('storage/'. $news->url)}}" alt="no image found">
+                                 @endif
+
                         </td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="">
@@ -88,4 +90,6 @@
     </div>        
 </div>
 
-@endsection
+@endsection --}}
+
+@dd('')

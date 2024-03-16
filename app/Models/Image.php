@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'url', 'type', 'news_id', // Add any other columns you want to be fillable here
+    ];
+
+    public function news()
+    {
+        return $this->belongsTo('App\Models\News', 'news_id');
+    }
 }

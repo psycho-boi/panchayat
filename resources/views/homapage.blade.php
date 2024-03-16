@@ -240,16 +240,20 @@
                 </div>
 
                 {{-- @dd($News); --}}
-                @foreach ($News as $News)
+                @foreach ($newsItem as $news)
                     <div class="box-news">
                       <a aria-label="LunarXP Wins Space Innovator of the Year Award" href="#">
                         <div class="row">
                           <div class="col-lg-3 col-4 pr-1">
-                            <img alt="LunarXP Wins Space Innovator of the Year Award" class="img-fluid" src="{{asset('assets/images/house.jpg')}}">
+                            {{-- <img alt="LunarXP Wins Space Innovator of the Year Award" class="img-fluid" src="{{asset('assets/images/house.jpg')}}"> --}}
+                            @if($news->url)
+                                <img class="img-fluid" src="{{asset('storage/'. $news->url)}}" alt="no image found">
+                            @endif 
                           </div>
                           <div class="col-lg-9 col-8 news-heading">
-                            <h4>{{$News->title}}</h4>
-                            <p>{{$News->created_at->format('M d, Y')}}</p>
+                            <h4>{{$news->news_title}}</h4>
+
+                            <p>{{$news->created_at}}</p> 
                           </div>
                         </div>
                       </a>

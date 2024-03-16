@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        return view('slider.slider');
     }
 
     /**
@@ -27,7 +28,31 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sliderTitle = $request->input('slider_title');
+        $sliderContent = $request->input('slider_content');
+        $sliderPhoto = $request->file('slider_photo');
+
+         $slidersId = DB::table('sliders')->insertGetId([
+             'title' => $sliderTitle,
+             'description' => $sliderContent,
+             'created_at' => now(),
+             'updated_at' => now(),
+         ]);
+
+    // Store photo for slider section
+    if ($sliderPhoto) {
+        // $photoPath = $sliderPhoto->move(public_path('images'));
+        $photoPath = $sliderPhoto->store('public/images');
+        DB::table('images')->insert([
+            'url' => $photoPath,
+            'foreign' => $slidersId,
+            'type' => 'slider',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
+
+    return redirect()->back()->with('success', 'Data stored successfully.');
     }
 
     /**

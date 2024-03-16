@@ -8,9 +8,11 @@ use App\Models\Workshop;
 use App\Models\Slider;
 use App\Models\Event;
 use App\Models\OnlineFacility;
+use Illuminate\Support\Facades\DB;
 
 class HomepageController extends Controller
 {
+    
     public function index(){
         $News = News::latest()->take(3)->get();
         $Workshop = Workshop::latest()->take(3)->get();
@@ -20,7 +22,7 @@ class HomepageController extends Controller
 
     
         // @dd($News);
-        return view('homapage', compact(['News','Workshop','Slider','Event','OnlineFacility']));
+        return view('homapage', compact(['newsItem','Workshop','Slider','Event','OnlineFacility']));
     }
 
 }

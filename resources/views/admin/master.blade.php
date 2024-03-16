@@ -53,7 +53,7 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            <a class="nav-link collapsed" href="{{route('slider.index')}}" >
                                 <div class="sb-nav-link-icon"><i class="bi bi-file-easel"></i></div>
                                 Slider
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -68,7 +68,7 @@
                                 Form
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            <a class="nav-link collapsed" href="{{route('workshop.index')}}" >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Workshop
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
