@@ -11,7 +11,7 @@
     <label for="ws_content">Workshop Location:</label>
     <input type="text" name="ws_location">
     <label for="ws_photo">Workshop Photo:</label>
-    <input type="file" name="ws_photo">
+    <input type="file" name="ws_photos[]" id="ws_photos" class="form-control-file" multiple>
     <label for="ws_photo">Workshop Doc:</label>
     <input type="file" name="ws_doc">
 

@@ -53,12 +53,13 @@
                         <td>{{$i}}</td>
                         <td>{{$ws->workshop_title}}</td>
                         <td>        
-
-                                 @if($ws->image_url)
-                                     <img src="{{asset('storage/'. $ws->image_url)}}" alt="no image found">
-                                 @else
-                                     No Image
-                                 @endif
+                            
+                            {{-- single image --}}
+                            @if($ws->image_url)
+                            <img src="{{asset('storage/'. $ws->image_url)}}" alt="no image found">
+                            @else
+                            No Image
+                            @endif
 
                         </td>
                         <td>

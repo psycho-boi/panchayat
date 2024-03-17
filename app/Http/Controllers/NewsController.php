@@ -26,7 +26,7 @@ class NewsController extends Controller
         // foreach ($newsItem as $news) {
         //     // Fetch the associated photo
         //     $photo = DB::table('Images')
-        //                ->where('foreign', $news->news_id)
+        //                ->where('foreign_key', $news->news_id)
         //                ->where('type', 'App\Models\News')
         //                ->first();
 
@@ -44,7 +44,7 @@ class NewsController extends Controller
     {
         $newsItem = DB::table('news')
         ->leftJoin('images', function ($join) {
-            $join->on('news.news_id', '=', 'images.foreign')
+            $join->on('news.news_id', '=', 'images.foreign_key')
                  ->where('images.type', '=', 'News');
         })
         ->select('news.title as news_title', 'news.description', 'images.url')
@@ -96,7 +96,7 @@ class NewsController extends Controller
         $photoPath = $newsPhoto->store('public/images');
         DB::table('images')->insert([
             'url' => $photoPath,
-            'foreign' => $newsId,
+            'foreign_key' => $newsId,
             'type' => 'news',
             'created_at' => now(),
             'updated_at' => now(),

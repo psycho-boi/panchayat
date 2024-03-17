@@ -32,6 +32,10 @@ Route::get('/form', function () {
     return view('form');
 });
 
+Route::get('/sample', function () {
+    return view('sample');
+});
+
 Route::get('/user_registration', function(){
     return view('user_registration');
 });
@@ -68,7 +72,7 @@ Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name(
 Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
 Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
 
-Route::get('/news/docs/{doc_url}', [WorkshopController::class, 'showDoc'])->name('workshop.doc');
+Route::get('/storage/{doc_url}', [WorkshopController::class, 'showDoc'])->name('workshop.doc');
 
 
 

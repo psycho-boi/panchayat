@@ -18,11 +18,12 @@ class HomepageController extends Controller
         //fetch news
         $newsItem = DB::table('news')
         ->leftJoin('images', function ($join) {
-            $join->on('news.news_id', '=', 'images.foreign')
+            $join->on('news.news_id', '=', 'images.foreign_key')
                  ->where('images.type', '=', 'News');
         })
         ->select('news.title as news_title', 'news.description', 'images.url', 'news.created_at')
         ->orderBy('news.created_at', 'desc')
+        ->take(3)
         ->get();
 
         $newsItem->transform(function ($item) {

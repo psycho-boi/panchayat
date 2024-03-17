@@ -10,33 +10,56 @@ class WorkshopController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    // multipl image
     public function index()
-    {
-        $workshopItem = DB::table('workshops')
-            ->leftJoin('images', function ($join) {
-                $join->on('workshops.workshop_id', '=', 'images.foreign')
-                    ->where('images.type', '=', 'workshop');
-            })
-            ->leftJoin('docs', function ($join) {
-                $join->on('workshops.workshop_id', '=', 'docs.foreign')
-                    ->where('docs.type', '=', 'workshop');
-            })
-            ->select('workshops.title as workshop_title', 'workshops.description', 'images.url as image_url', 'docs.url as doc_url')
-            ->orderBy('workshops.created_at', 'desc')
-            ->get();
+{
+    $workshopItem = DB::table('workshops')
+        ->leftJoin('images', function ($join) {
+            $join->on('workshops.workshop_id', '=', 'images.foreign_key')
+                ->where('images.type', '=', 'workshop')
+                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = workshops.workshop_id and type = "workshop")');
+        })
+        ->leftJoin('docs', function ($join) {
+            $join->on('workshops.workshop_id', '=', 'docs.foreign_key')
+                ->where('docs.type', '=', 'workshop');
+        })
+        ->select('workshops.title as workshop_title', 'workshops.description', 'images.url as image_url', 'docs.url as doc_url')
+        ->orderBy('workshops.created_at', 'desc')
+        ->get();
 
-        $workshopItem->transform(function ($item) {
-            if ($item->image_url) {
-                $item->image_url = str_replace('public/', '', $item->image_url);
-            }
-            if ($item->doc_url) {
-                $item->doc_url = str_replace('public/', '', $item->doc_url);
-            }
-            return $item;
-        });
+    $workshopItem->transform(function ($item) {
+        if ($item->image_url) {
+            $item->image_url = str_replace('public/', '', $item->image_url);
+        }
+        if ($item->doc_url) {
+            $item->doc_url = str_replace('public/', '', $item->doc_url);
+        }
+        return $item;
+    });
 
-        return view('workshop.workshop', compact('workshopItem'));
+    return view('workshop.workshop', compact('workshopItem'));
 }
+
+
+
+
+
+    public function showDoc($doc_url)
+    {
+        // Assuming the documents are stored in the 'storage/docs' directory
+        $docPath = storage_path( $doc_url);
+
+        // Check if the document file exists
+        if (!file_exists($docPath)) {
+            abort(404);
+        }
+
+        // Return a view to display the document
+        return response()->file($docPath);
+    }
+
+
 
     
     /**
@@ -68,26 +91,28 @@ class WorkshopController extends Controller
     ]);
 
     // Store photo for workshop section
-    if ($request->hasFile('ws_photo')) {
-        $wsPhoto = $request->file('ws_photo'); 
-        // $photoPath = $workshopPhoto->move(public_path('images'));
-        $photoPath = $wsPhoto->store('public/images');
-        DB::table('images')->insert([
-            'url' => $photoPath,
-            'foreign' => $wsId,
-            'type' => 'Workshop',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+    if ($request->hasFile('ws_photos')) {
+        $wsPhotos = $request->file('ws_photos');
+    
+        foreach ($wsPhotos as $wsPhoto) {
+            $photoPath = $wsPhoto->store('public/images');
+            DB::table('images')->insert([
+                'url' => $photoPath,
+                'foreign_key' => $wsId,
+                'type' => 'Workshop',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 
     // Store docs for workshop section
     if ($request ->hasFile('ws_doc')) {
         $wsDoc = $request->file('ws_doc');
-        $docPath = $wsDoc->store('docs');
+        $docPath = $wsDoc->store('public/docs');
         DB::table('docs')->insert([
             'url' => $docPath,
-            'foreign' => $wsId,
+            'foreign_key' => $wsId,
             'type' => 'Workshop',
             'created_at' => now(),
             'updated_at' => now(),
