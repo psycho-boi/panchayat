@@ -3,9 +3,12 @@
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\WorkshopController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +31,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomepageController::class, 'index']);
 
 
-Route::get('/form', function () {
-    return view('form');
-});
+Route::get('/form', [FormController::class, 'list'])->name('form.show');
 
 Route::get('/sample', function () {
     return view('sample');
@@ -84,24 +85,33 @@ Route::get('/admin/createmeeting', function(){ return view('meeting.addmeeting')
 
 
 //Notice
-// Route::get('/admin/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
-// Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name('workshop.store'); 
-// Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
-// Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
+Route::get('/admin/notice', [NoticeController::class, 'index'])->name('notice.index');
+Route::post('/admin/addnotice', [NoticeController::class, 'store']) -> name('notice.store'); 
+Route::delete('/admin/deletenotice/{id}',[NoticeController::class, 'destroy'] )->name('notice.delete');
+Route::get('/admin/createnotice', function(){ return view('notice.addnotice');});
 
 
-// //scheme
-// Route::get('/admin/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
-// Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name('workshop.store'); 
-// Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
-// Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
+//Events
+Route::get('/admin/event', [EventController::class, 'index'])->name('event.index');
+Route::post('/admin/addevent', [EventController::class, 'store']) -> name('event.store'); 
+Route::delete('/admin/deleteevent/{id}',[EventController::class, 'destroy'] )->name('event.delete');
+Route::get('/admin/createevent', function(){ return view('event.addevent');});
+
+
+//form
+Route::get('/admin/form', [FormController::class, 'index'])->name('form.index');
+Route::post('/admin/addform', [FormController::class, 'store']) -> name('form.store'); 
+Route::delete('/admin/deleteform/{id}',[FormController::class, 'destroy'] )->name('form.delete');
+Route::get('/admin/createform', function(){ return view('form.addform');});
+
+Route::get('/storage/{form_url}', [FormController::class, 'showDoc'])->name('form.doc');
 
 
 // //staff
-// Route::get('/admin/workshop', [WorkshopController::class, 'index'])->name('workshop.index');
-// Route::post('/admin/addworkshop', [WorkshopController::class, 'store']) -> name('workshop.store'); 
-// Route::delete('/admin/deleteworkshop/{id}',[WorkshopController::class, 'destroy'] )->name('workshop.delete');
-// Route::get('/admin/createworkshop', function(){ return view('workshop.addworkshop');});
+Route::get('/admin/staff', [staffController::class, 'index'])->name('staff.index');
+Route::post('/admin/addstaff', [staffController::class, 'store']) -> name('staff.store'); 
+Route::delete('/admin/deletestaff/{id}',[staffController::class, 'destroy'] )->name('staff.delete');
+Route::get('/admin/createstaff', function(){ return view('staff.addstaff');});
 
 
 

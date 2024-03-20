@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('type');
             $table->id('image_id');
             $table->timestamps();
+            $table->integer('foreign_key');
         });
     }
 

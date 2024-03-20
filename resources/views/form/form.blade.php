@@ -9,7 +9,7 @@
   <div class="row mb-0 justify-content-center text-center">
     <div class="col-lg-4 mb-2">
       <h2 class="section-title-underline">
-        <span>Manage Workshop</span>
+        <span>Manage Forms</span>
       </h2>
     </div>
    </div>
@@ -21,7 +21,7 @@
                 <div class="row">
 
                     <div class="col-xs-6">
-                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Workshop</span></a>
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Form</span></a>
                         <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </th>
                         <th>Sr no.</th>
                         <th>Title</th>
-                        <th>Photo</th>
+                        {{-- <th>Photo</th> --}}
                         <th>Doc</th>
                         <th>Actions</th>
                     </tr>
@@ -46,7 +46,7 @@
                 <tbody>
                     
                 
-                    @foreach ($workshopItem as $ws)
+                    @foreach ($formItem as $form)
                      <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -55,20 +55,10 @@
                             </span>
                         </td>
                         <td>  {{ $i++}}</td>
-                        <td>{{$ws->workshop_title}}</td>
-                        <td>        
-                            
-                            {{-- single image --}}
-                            @if($ws->image_url)
-                            <img src="{{asset('storage/'. $ws->image_url)}}" alt="no image found">
-                            @else
-                            No Image
-                            @endif
-
-                        </td>
+                        <td>{{$form->forms_title}}</td>
                         <td>
-                            @if ($ws->doc_url)
-                                <a href="{{ route('workshop.doc', ['doc_url' => $ws->doc_url]) }}" class="btn btn-primary" target="_blank">View Document</a>
+                            @if ($form->url)
+                                <a href="{{ route('form.doc', ['form_url' => $form->url]) }}" class="btn btn-primary" target="_blank">View Document</a>
                             @else
                                 No Document
                             @endif

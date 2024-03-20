@@ -40,8 +40,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                       $i=1;
+                    @endphp
                     
-                    {{$i=1}}
                     @foreach ($newsItem as $news)
                      <tr>
                         <td>
@@ -50,7 +52,7 @@
                                 <label for="checkbox1"></label>
                             </span>
                         </td>
-                        <td>{{$i}}</td>
+                        <td>{{ $i++ }}</td>
                         <td>{{$news->news_title}}</td>
                         
                         <td>        
@@ -81,7 +83,7 @@
                             </a>
                         </td>
                      </tr>
-                     {{ $i++ }}
+                     
                     @endforeach
 
                 </tbody>

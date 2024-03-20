@@ -44,7 +44,7 @@
   display: none;
 }
 
-.blog-home5 .b-h-box:hover {
+/* .blog-home5 .b-h-box:hover {
   color: #8d97ad;
 }
 
@@ -61,7 +61,7 @@
 
 .blog-home5 .b-h-box:hover .card-text {
   display: block;
-}
+} */
 
 .blog-home5 .bg-danger-gradiant {
     background: #ff4d7e;

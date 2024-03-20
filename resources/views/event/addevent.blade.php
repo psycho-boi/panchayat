@@ -36,20 +36,20 @@
                 <div class="card-header">
                     <div class="row mb-0 justify-content-center text-center">
                           <h2 class="section-title-underline ">
-                            <span>Add Workshop</span>
+                            <span>Add Event</span>
                           </h2>
                     </div>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" class="user-input" action="{{ route('workshop.store') }}" enctype="multipart/form-data">
+                    <form method="POST" class="user-input" action="{{ route('event.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="ws_title" value="{{ old('ws_title') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="event_title" value="{{ old('event_title') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="ws_content" required>{{ old('ws_content') }}</textarea>
+                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="event_content" required>{{ old('event_content') }}</textarea>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -78,9 +78,9 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="ws_location" value="{{ old('ws_location') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="event_location" value="{{ old('event_location') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
+                                @error('location')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -93,8 +93,8 @@
                             <label for="images" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
 
                             <div class="col-md-6">
-                                <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="ws_photos[]" multiple >
-                                <ul id="image-list"></ul>
+                                <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="event_photos[]" multiple >
+                                {{-- <ul id="image-list"></ul> --}}
 
                                 @error('images')
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             <label for="pdfs" class="col-md-4 col-form-label text-md-right">{{ __('Docs') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pdfs" type="file" class="form-control-file @error('pdfs') is-invalid @enderror" name="ws_doc[]" multiple accept="application/pdf">
+                                <input id="pdfs" type="file" class="form-control-file @error('pdfs') is-invalid @enderror" name="event_doc[]" multiple accept="application/pdf">
 
                                 @error('pdfs')
                                     <span class="invalid-feedback" role="alert">

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('docs', function (Blueprint $table) {
-            $table->string('type');
-            $table->string('url');
-            $table->id('doc_id');
-            $table->timestamps();
-            $table->integer('foreign_key');
+        Schema::create('forms', function (Blueprint $table) {
+                $table->string('Title');
+                $table->text('description');
+                $table->boolean( 'is_active' )->default( true );
+                $table->id('form_id');
+                $table->timestamps();
+
         });
     }
 
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('docs');
+        Schema::dropIfExists('forms');
     }
 };

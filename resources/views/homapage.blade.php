@@ -21,22 +21,22 @@
       <div class="carousel-item active">
         <img class="d-block carousel-img" src="{{asset('assets/images/slide2.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-heading">Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          {{-- <h5 class="carousel-heading">Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block carousel-img" src="{{asset('assets/images/slide3.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-heading">Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          {{-- <h5 class="carousel-heading">Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> --}}
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block carousel-img" src="{{asset('assets/images/slide4.jpeg')}}" data-holder-rendered="true">
         <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-heading">Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          {{-- <h5 class="carousel-heading">Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> --}}
         </div>
       </div>
     </div>
@@ -321,7 +321,7 @@
                   </a>
                 </div>  
                 
-                @foreach ($Workshop as $Workshop)
+                {{-- @foreach ($Workshop as $Workshop)
                   <div class="box-news box-news--alerts">
                   <a aria-label="Astronaut Leadership Training Canceled" href="#">
                     <div class="row">
@@ -335,7 +335,7 @@
                     </div>
                   </a>
                   </div>    
-                @endforeach
+                @endforeach --}}
         
                 <div class="col-lg-10 offset-lg-2 col-md-8 offset-md-4 col-7 offset-4">
                   <a href="#" class="view">View All</a>

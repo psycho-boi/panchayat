@@ -55,7 +55,7 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="/form" class="nav-link text-left text-light">Forms</a>
+                  <a href="{{route('form.show')}}" class="nav-link text-left text-light">Forms</a>
                 </li>
                 <li>
                   <a href="courses.html" class="nav-link text-left text-light">Workshop</a>

@@ -22,7 +22,8 @@ class WorkshopController extends Controller
         })
         ->leftJoin('docs', function ($join) {
             $join->on('workshops.workshop_id', '=', 'docs.foreign_key')
-                ->where('docs.type', '=', 'workshop');
+                ->where('docs.type', '=', 'workshop')
+                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = workshops.workshop_id and type = "workshop")');
         })
         ->select('workshops.title as workshop_title', 'workshops.description', 'images.url as image_url', 'docs.url as doc_url')
         ->orderBy('workshops.created_at', 'desc')
@@ -75,53 +76,77 @@ class WorkshopController extends Controller
      */
     public function store(Request $request)
     {
-    // Store data for workshop section
-    $wsTitle = $request->input('ws_title');
-    $wsContent = $request->input('ws_content');
-    $wsloc = $request->input('ws_location');
-    // $wsPhoto = $request->file('ws_photo');
-    // $wsDoc = $request->file('ws_doc');
-
-    $wsId = DB::table('workshops')->insertGetId([
-        'title' => $wsTitle,
-        'description' => $wsContent,
-        'location' => $wsloc,
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
-
-    // Store photo for workshop section
-    if ($request->hasFile('ws_photos')) {
-        $wsPhotos = $request->file('ws_photos');
+        $messages = [
+            'ws_title.required' => 'The workshop title is required.',
+            'ws_content.required' => 'The workshop content is required.',
+            'ws_location.required' => 'The workshop location is required.',
+            // 'ws_photos.*.image' => 'The attribute must be an image file.',
+            'ws_photos.*.mimes' => 'Photo must be a file of type: :values.',
+            'ws_doc.*.mimes' => 'The :attribute must be a PDF file.',
+        ];
+        
+        // Validate the request data
+        $validatedData = $request->validate([
+            'ws_title' => 'required',
+            'ws_content' => 'required',
+            'ws_location' => 'required',
+            'ws_photos.*' => 'mimes:jpeg,png,jpg,gif,svg',
+            'ws_doc.*' => 'mimes:pdf',
+        ], $messages);
     
-        foreach ($wsPhotos as $wsPhoto) {
-            $photoPath = $wsPhoto->store('public/images');
-            DB::table('images')->insert([
-                'url' => $photoPath,
-                'foreign_key' => $wsId,
-                'type' => 'Workshop',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
-    }
 
-    // Store docs for workshop section
-    if ($request ->hasFile('ws_doc')) {
+        try {
+        $wsTitle = $request->input('ws_title');
+        $wsContent = $request->input('ws_content');
+        $wsloc = $request->input('ws_location');
+        $wsPhoto = $request->file('ws_photo');
         $wsDoc = $request->file('ws_doc');
-        $docPath = $wsDoc->store('public/docs');
-        DB::table('docs')->insert([
-            'url' => $docPath,
-            'foreign_key' => $wsId,
-            'type' => 'Workshop',
+
+        $wsId = DB::table('workshops')->insertGetId([
+            'title' => $wsTitle,
+            'description' => $wsContent,
+            'location' => $wsloc,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        // Store photo for workshop section
+        if ($request->hasFile('ws_photos')) {
+            $wsPhotos = $request->file('ws_photos');
+        
+            foreach ($wsPhotos as $wsPhoto) {
+                $photoPath = $wsPhoto->store('public/images');
+                DB::table('images')->insert([
+                    'url' => $photoPath,
+                    'foreign_key' => $wsId,
+                    'type' => 'Workshop',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
+
+        // Store docs for workshop section
+        if ($request ->hasFile('ws_doc')) {
+            $wsDoc = $request->file('ws_doc');
+            
+            foreach($wsDoc as $wsDoc){
+                $docPath = $wsDoc->store('public/docs');
+                DB::table('docs')->insert([
+                    'url' => $docPath,
+                    'foreign_key' => $wsId,
+                    'type' => 'Workshop',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
+
+        return redirect()->back()->with('success', 'workshop stored successfully');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'An error occurred while storing data.');
     }
 
-    // Similar logic for other sections (workshop, event, notice)
-
-    return redirect()->back()->with('success', 'Data stored successfully.');
     }
 
     /**

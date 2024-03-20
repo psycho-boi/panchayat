@@ -78,7 +78,26 @@ class NewsController extends Controller
      */
     public function store(Request $request)
 {
-    // Store data for news section
+
+    $messages = [
+        'news_title.required' => 'The workshop title is required.',
+        'news_content.required' => 'The workshop content is required.',
+        // 'news_location.required' => 'The workshop location is required.',
+        // 'news_photos.required' => 'At least one photo is required for the workshop.',
+        // 'news_doc.required' => 'A document is required for the workshop.',
+    ];
+
+    // Validate the request data
+    $validatedData = $request->validate([
+        'news_title' => 'required',
+        'news_content' => 'required',
+        // 'news_location' => 'required',
+        // 'news_photos' => 'required',
+        // 'news_doc' => 'required',
+    ], $messages);
+
+
+try {
     $newsTitle = $request->input('news_title');
     $newsContent = $request->input('news_content');
     $newsPhoto = $request->file('news_photo');
@@ -117,7 +136,10 @@ class NewsController extends Controller
 
     // Similar logic for other sections (workshop, event, notice)
 
-    return redirect()->back()->with('success', 'Data stored successfully.');
+    return redirect()->back()->with('success', 'News stored successfully');
+} catch (\Exception $e) {
+    return redirect()->back()->with('error', 'An error occurred while storing data.');
+}
 }
 
 

@@ -96,13 +96,18 @@ body {
 
 .section-title-underline {
   color: #000; }
-  .section-title-underline span {
+  /* .section-title-underline span {
     display: inline-block;
-    border-bottom: 4px solid #51be78; }
+    border-bottom: 4px solid #131614; } */
   .section-title-underline.style-2 {
     color: #fff; }
     .section-title-underline.style-2 span {
       border-color: #51be78; }
+
+
+.user-input > .row {
+  padding: 10px;
+}
 
 hr {
   margin: 1rem 0;
