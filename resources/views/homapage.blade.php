@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'VP Pissurlem')
+
 @section('content')
 
        {{-- Slider --}}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>@yield('title')</title>
 <head>
     @include('layouts.navbar')
 
@@ -10,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     {{-- <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet"> --}}
+    
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/blogs/blog-3/assets/css/blog-3.css">
     <link rel="stylesheet" href="{{asset('assets/css/user_registration.css')}}">
 
     <link rel="stylesheet" href="{{asset('assets/fonts/icomoon/style.css')}}">

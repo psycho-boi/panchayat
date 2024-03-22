@@ -1138,3 +1138,15 @@ h1, h2, h3, h4, h5,
     td > img{
       height: 120px;
     }
+
+    .footer-list{
+      display: block !important; 
+        
+    }
+
+    .sub-heading{
+      color: rgb(29, 29, 29);
+      font-weight: bold;
+      padding-top: 10px;
+      margin-top: 10px;
+    }

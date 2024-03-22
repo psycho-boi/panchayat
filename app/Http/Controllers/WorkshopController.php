@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Workshop;
 use Illuminate\Http\Request;
 use Illuminate\support\facades\DB;
 
@@ -10,6 +11,85 @@ class WorkshopController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+     public function list(){
+        $workshopItem = DB::table('workshops')
+        ->leftJoin('images', function ($join) {
+            $join->on('workshops.workshop_id', '=', 'images.foreign_key')
+                ->where('images.type', '=', 'workshop')
+                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = workshops.workshop_id and type = "workshop")');
+        })
+        ->leftJoin('docs', function ($join) {
+            $join->on('workshops.workshop_id', '=', 'docs.foreign_key')
+                ->where('docs.type', '=', 'workshop')
+                ->where('is_active', '=', '1')
+                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = workshops.workshop_id and type = "workshop" and is_active="1")');
+        })
+        ->where('workshops.is_active', '!=', '0')
+        ->select('workshops.title as workshop_title', 'workshops.description', 'workshops.workshop_id as workshop_id', 'images.url as image_url', 'docs.url as doc_url')
+        ->orderBy('workshops.created_at', 'desc')
+        ->get();
+
+    $workshopItem->transform(function ($item) {
+        if ($item->image_url) {
+            $item->image_url = str_replace('public/', '', $item->image_url);
+        }
+        if ($item->doc_url) {
+            $item->doc_url = str_replace('public/', '', $item->doc_url);
+        }
+        return $item;
+    });
+
+    return view('workshop', compact('workshopItem'));
+    }
+
+
+
+    public function display($id){
+        $workshop = DB::table('workshops')
+        ->where('workshop_id', $id)
+        ->where('is_active', '!=', 0)
+        ->first();
+
+
+        if (!$workshop) {
+            abort(404); // Workshop not found
+        }
+        
+        // Fetching all images related to the article
+        $images = DB::table('images')
+                    ->where('foreign_key', $id)
+                    ->where('type', 'workshop')
+                    ->get();
+
+        $docs = DB::table('docs')
+                    ->where('foreign_key', $id)
+                    ->where('type', 'workshop')
+                    ->get();
+
+        $images->transform(function ($item) {
+            if ($item->url) {
+                $item->url = str_replace('public/', '', $item->url);
+            }
+            return $item;
+        });
+
+        $docs->transform(function ($item) {
+            if ($item->url) {
+                $item->url = str_replace('public/', '', $item->url);
+            }
+            return $item;
+        });
+        
+        // Separate the first image from the rest
+        $mainImage = $images->shift(); // Removes and returns the first item
+
+        return view('workshopshow', compact('workshop', 'docs', 'mainImage', 'images'));
+    }
+
+
+
 
     // multipl image
     public function index()
@@ -25,7 +105,8 @@ class WorkshopController extends Controller
                 ->where('docs.type', '=', 'workshop')
                 ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = workshops.workshop_id and type = "workshop")');
         })
-        ->select('workshops.title as workshop_title', 'workshops.description', 'images.url as image_url', 'docs.url as doc_url')
+        ->where('workshops.is_active', '!=', '0')
+        ->select('workshops.title as workshop_title', 'workshops.description', 'workshops.workshop_id as workshop_id', 'images.url as image_url', 'docs.url as doc_url')
         ->orderBy('workshops.created_at', 'desc')
         ->get();
 

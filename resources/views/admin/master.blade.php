@@ -83,7 +83,7 @@
                                 Staff
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            <a class="nav-link collapsed" href="{{route('scheme.index')}}"  >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Scheme
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

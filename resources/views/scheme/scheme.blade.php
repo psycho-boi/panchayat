@@ -2,14 +2,17 @@
 
 @section('content')
 
+        @php
+            $i=1;
+        @endphp
+
   <div class="row mb-0 justify-content-center text-center">
     <div class="col-lg-4 mb-2">
-      <h2 class="section-title-underline mb-5">
-        <span>Manage News</span>
+      <h2 class="section-title-underline">
+        <span>Manage Scheme</span>
       </h2>
     </div>
-</div>
-
+   </div>
 
 <div class="container">
     <div class="table-responsive">
@@ -18,11 +21,12 @@
                 <div class="row">
 
                     <div class="col-xs-6">
-                        <a href="{{route('news.create')}}" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
+                        <a href="{{route('scheme.create')}}" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Scheme</span></a>
                         <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                     </div>
                 </div>
             </div>
+            
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -35,16 +39,14 @@
                         <th>Sr no.</th>
                         <th>Title</th>
                         <th>Photo</th>
-                        
+                        <th>Doc</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                       $i=1;
-                    @endphp
                     
-                    @foreach ($newsItem as $news)
+                
+                    @foreach ($schemeItem as $scheme)
                      <tr>
                         <td>
                             <span class="custom-checkbox">
@@ -52,18 +54,27 @@
                                 <label for="checkbox1"></label>
                             </span>
                         </td>
-                        <td>{{ $i++ }}</td>
-                        <td>{{$news->news_title}}</td>
-                        
+                        <td>  {{ $i++}}</td>
+                        <td>{{$scheme->scheme_title}}</td>
                         <td>        
-
-                                 @if($news->url)
-                                     <img src="{{asset('storage/'. $news->url)}}" alt="no image found">
-                                 @endif
+                            
+                            {{-- single image --}}
+                            @if($scheme->image_url)
+                            <img src="{{asset('storage/'. $scheme->image_url)}}" alt="no image found">
+                            @else
+                            No Image
+                            @endif
 
                         </td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="">
+                            @if ($scheme->doc_url)
+                                <a href="{{ route('scheme.doc', ['scheme_doc_url' => $scheme->doc_url]) }}" class="btn btn-primary" target="_blank">View Document</a>
+                            @else
+                                No Document
+                            @endif
+                        </td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit " data-toggle="" >
                                 <button type="button" class="btn btn-primary d">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
@@ -83,7 +94,7 @@
                             </a>
                         </td>
                      </tr>
-                     
+                    
                     @endforeach
 
                 </tbody>

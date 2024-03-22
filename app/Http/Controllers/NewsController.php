@@ -11,33 +11,7 @@ use  App\Models\Image;
 
 class NewsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    // public function index()
-    // {
-        // // $News = News::latest()->get();
-        // // return view('admin.news', compact('News'));
-
-        // // Get all news items
-        // $newsItem = DB::table('news')->get();
-
-        // // For each news item, retrieve the associated photo
-        // foreach ($newsItem as $news) {
-        //     // Fetch the associated photo
-        //     $photo = DB::table('Images')
-        //                ->where('foreign_key', $news->news_id)
-        //                ->where('type', 'App\Models\News')
-        //                ->first();
-
-        //     // Assign the photo path to the news item
-        //     $news->photo = $photo ? asset($photo->path) : null;
-        // }
-
-        // // Pass the data to the view
-        // return view('news.news', compact('newsItem'));
-
-
+    
 
 
     public function index()
@@ -47,6 +21,7 @@ class NewsController extends Controller
             $join->on('news.news_id', '=', 'images.foreign_key')
                  ->where('images.type', '=', 'News');
         })
+        ->where('news.is_active', '!=', '0' )
         ->select('news.title as news_title', 'news.description', 'images.url')
         ->orderBy('news.created_at', 'desc')
         ->get();
@@ -82,18 +57,14 @@ class NewsController extends Controller
     $messages = [
         'news_title.required' => 'The workshop title is required.',
         'news_content.required' => 'The workshop content is required.',
-        // 'news_location.required' => 'The workshop location is required.',
-        // 'news_photos.required' => 'At least one photo is required for the workshop.',
-        // 'news_doc.required' => 'A document is required for the workshop.',
+        'ws_photos.*.mimes' => 'Photo must be a file of type: :values.',
     ];
 
     // Validate the request data
     $validatedData = $request->validate([
         'news_title' => 'required',
         'news_content' => 'required',
-        // 'news_location' => 'required',
-        // 'news_photos' => 'required',
-        // 'news_doc' => 'required',
+        'ws_photos.*' => 'mimes:jpeg,png,jpg,gif,svg',
     ], $messages);
 
 
@@ -111,7 +82,7 @@ try {
 
     // Store photo for news section
     if ($newsPhoto) {
-        // $photoPath = $newsPhoto->move(public_path('images'));
+        
         $photoPath = $newsPhoto->store('public/images');
         DB::table('images')->insert([
             'url' => $photoPath,
@@ -121,6 +92,20 @@ try {
             'updated_at' => now(),
         ]);
     }
+
+    // if ($request->hasFile('news_photos')) {
+    //     $newsPhoto = $request->file('news_photo');
+    //     foreach ($newsPhoto as $newsPhoto) {
+    //         $photoPath = $newsPhoto->store('public/images');
+    //         DB::table('images')->insert([
+    //             'url' => $photoPath,
+    //             'foreign_key' => $newsId,
+    //             'type' => 'news',
+    //             'created_at' => now(),
+    //             'updated_at' => now(),
+    //         ]);
+    //     }
+    // }
 
     // Store docs for news section
     // $newsDoc = $request->file('news_doc');

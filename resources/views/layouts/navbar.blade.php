@@ -47,24 +47,24 @@
                   <a href="/" class="nav-link text-left text-light">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left text-light">About Us</a>
+                  <a href="" class="nav-link text-left text-light">About Us</a>
                   <ul class="dropdown">
-                    <li><a href="teachers.html">History</a></li>
+                    <li><a href="{{route('about')}}">History</a></li>
                     <li><a href="about.html">Ex-Sarpanch</a></li>
-                    <li><a href="about.html">Panchayat staff</a></li>
+                    <li><a href="{{route('staff.list')}}">Panchayat staff</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a href="{{route('form.show')}}" class="nav-link text-left text-light">Forms</a>
+                  <a href="{{route('form.list')}}" class="nav-link text-left text-light">Forms</a>
                 </li>
                 <li>
-                  <a href="courses.html" class="nav-link text-left text-light">Workshop</a>
+                  <a href="{{route('workshop.list')}}" class="nav-link text-left text-light">Workshop</a>
                 </li>
                 <li>
-                  <a href="courses.html" class="nav-link text-left text-light">Scheme</a>
+                  <a href="{{route('scheme.list')}}" class="nav-link text-left text-light">Scheme</a>
                 </li>
                 <li>
-                  <a href="courses.html" class="nav-link text-left text-light">Contact us</a>
+                  <a href="{{route('contact')}}" class="nav-link text-left text-light">Contact us</a>
                 </li>
                 <li class="has-children">
                     <a href="about.html" class="nav-link text-left text-light">English</a>

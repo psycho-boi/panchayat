@@ -10,10 +10,129 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function list(){
+        $eventItem = DB::table('events')
+        ->leftJoin('images', function ($join) {
+            $join->on('events.event_id', '=', 'images.foreign_key')
+                ->where('images.type', '=', 'event')
+                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = events.event_id and type = "event")');
+        })
+        ->leftJoin('docs', function ($join) {
+            $join->on('events.event_id', '=', 'docs.foreign_key')
+                ->where('docs.type', '=', 'event')
+                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = events.event_id and type = "event")');
+        })
+        ->where('events.is_active', '!=', '0' )
+        ->select('events.title as event_title', 'events.description', 'events.event_id as event_id', 'images.url as image_url', 'docs.url as event_doc_url')
+        ->orderBy('events.created_at', 'desc')
+        ->get();
+
+        $eventItem->transform(function ($item) {
+            if ($item->image_url) {
+                $item->image_url = str_replace('public/', '', $item->image_url);
+            }
+            if ($item->event_doc_url) {
+                $item->event_doc_url = str_replace('public/', '', $item->event_doc_url);
+             }
+            return $item;
+        });
+
+        return view('event', compact('eventItem'));
+    }
+
+
+    public function display($id){
+        $event = DB::table('events')
+        ->where('event_id', $id)
+        ->where('is_active', '!=', 0)
+        ->first();
+
+
+        if (!$event) {
+            abort(404); // event not found
+        }
+        
+        // Fetching all images related to the article
+        $images = DB::table('images')
+                    ->where('foreign_key', $id)
+                    ->where('type', 'event')
+                    ->get();
+
+        $docs = DB::table('docs')
+                    ->where('foreign_key', $id)
+                    ->where('type', 'event')
+                    ->get();
+
+        $images->transform(function ($item) {
+            if ($item->url) {
+                $item->url = str_replace('public/', '', $item->url);
+            }
+            return $item;
+        });
+
+        $docs->transform(function ($item) {
+            if ($item->url) {
+                $item->url = str_replace('public/', '', $item->url);
+            }
+            return $item;
+        });
+        
+        // Separate the first image from the rest
+        $mainImage = $images->shift(); // Removes and returns the first item
+
+        return view('eventshow', compact('event', 'docs', 'mainImage', 'images'));
+    }
+
+
     public function index()
     {
-        //
+        $eventItem = DB::table('events')
+        ->leftJoin('images', function ($join) {
+            $join->on('events.event_id', '=', 'images.foreign_key')
+                ->where('images.type', '=', 'event')
+                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = events.event_id and type = "event")');
+        })
+        ->leftJoin('docs', function ($join) {
+            $join->on('events.event_id', '=', 'docs.foreign_key')
+                ->where('docs.type', '=', 'event')
+                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = events.event_id and type = "event")');
+        })
+        ->where('events.is_active', '!=', '0' )
+        ->select('events.title as event_title', 'events.description', 'images.url as image_url', 'docs.url as event_doc_url')
+        ->orderBy('events.created_at', 'desc')
+        ->get();
+
+    $eventItem->transform(function ($item) {
+        if ($item->image_url) {
+            $item->image_url = str_replace('public/', '', $item->image_url);
+        }
+        if ($item->event_doc_url) {
+            $item->event_doc_url = str_replace('public/', '', $item->event_doc_url);
+        }
+        return $item;
+    });
+
+    return view('event.event', compact('eventItem'));
     }
+
+
+
+    public function showDoc($doc_url)
+    {
+        // Assuming the documents are stored in the 'storage/docs' directory
+        $docPath = storage_path( $doc_url);
+
+        // Check if the document file exists
+        if (!file_exists($docPath)) {
+            abort(404);
+        }
+
+        // Return a view to display the document
+        return response()->file($docPath);
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.

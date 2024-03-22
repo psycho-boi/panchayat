@@ -17,13 +17,14 @@ class FormController extends Controller
             $join->on('forms.form_id', '=', 'docs.foreign_key')
                  ->where('docs.type', '=', 'form');
         })
-        ->select('forms.title as forms_title', 'forms.description', 'docs.url')
+        ->where('forms.is_active', '!=', '0')
+        ->select('forms.title as forms_title', 'forms.description as forms_description', 'docs.url as  docs_url')
         ->orderBy('forms.created_at', 'desc')
         ->get();
 
         $formItem->transform(function ($item) {
-            if ($item->url) {
-                $item->url = str_replace('public/', '', $item->url);
+            if ($item->docs_url) {
+                $item->docs_url = str_replace('public/', '', $item->docs_url);
             }
             return $item;
         });
@@ -39,6 +40,7 @@ class FormController extends Controller
             $join->on('forms.form_id', '=', 'docs.foreign_key')
                  ->where('docs.type', '=', 'form');
         })
+        ->where('forms.is_active', '!=', '0' )
         ->select('forms.title as forms_title', 'forms.description', 'docs.url')
         ->orderBy('forms.created_at', 'desc')
         ->get();

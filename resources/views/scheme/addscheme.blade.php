@@ -2,6 +2,7 @@
 
 @section('content')
 
+<!-- Check for success message -->
 @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -28,21 +29,6 @@
 @endif
 
 
-
-{{-- <form action="{{ route('nenews.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <label for="news_title">News Title:</label>
-    <input type="text" name="news_title">
-    <label for="news_content">News Content:</label>
-    <textarea name="news_content"></textarea>
-    <label for="news_photo">News Photo:</label>
-    <input type="file" name="news_photo">
-    <!-- Similar inputs for other sections (workshop, event, notice) -->
-    <button type="submit">Submit</button>
-</form> --}}
-
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -50,20 +36,20 @@
                 <div class="card-header">
                     <div class="row mb-0 justify-content-center text-center">
                           <h2 class="section-title-underline ">
-                            <span>Add News</span>
+                            <span>Add Scheme</span>
                           </h2>
                     </div>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" class="user-input" action="{{ route('news.store') }}" enctype="multipart/form-data">
+                    <form method="POST" class="user-input" action="{{ route('scheme.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="news_title" value="{{ old('news_title') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"  name="scheme_title" value="{{ old('scheme_title') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -77,7 +63,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="news_content" required>{{ old('news_content') }}</textarea>
+                                <textarea id="Description" class="form-control @error('address') is-invalid @enderror" name="scheme_content" required>{{ old('scheme_content') }}</textarea>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -87,13 +73,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Eligibility') }}</label>
 
+                            <div class="col-md-6">
+                                <textarea id="Eligibility" class="form-control @error('address') is-invalid @enderror" name="scheme_eligibility" required>{{ old('scheme_egligibility') }}</textarea>
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="images" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
 
                             <div class="col-md-6">
-                                <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="news_photos[]" multiple >
+                                <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="scheme_photos[]" multiple >
                                 <ul id="image-list"></ul>
 
                                 @error('images')
@@ -104,11 +102,11 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="pdfs" class="col-md-4 col-form-label text-md-right">{{ __('Docs') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pdfs" type="file" class="form-control-file @error('pdfs') is-invalid @enderror" name="news_doc[]" multiple accept="application/pdf">
+                                <input id="pdfs" type="file" class="form-control-file @error('pdfs') is-invalid @enderror" name="scheme_doc[]" multiple accept="application/pdf">
 
                                 @error('pdfs')
                                     <span class="invalid-feedback" role="alert">
@@ -116,7 +114,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -133,6 +131,4 @@
 </div>
 
 
-
-
-@endsection
+@endsection 
