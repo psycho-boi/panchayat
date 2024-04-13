@@ -78,7 +78,7 @@
                             <label for="pdfs" class="col-md-4 col-form-label text-md-right">{{ __('Docs') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pdfs" type="file" class="form-control-file @error('pdfs') is-invalid @enderror" name="form_doc[]" accept="application/pdf">
+                                <input id="pdfs" type="file" class="form-control-file " name="form_doc" accept="application/pdf">
 
                                 {{-- @error('pdfs')
                                     <span class="invalid-feedback" role="alert">

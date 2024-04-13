@@ -31,7 +31,7 @@
             </form> -->
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
@@ -39,7 +39,49 @@
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="#!">Logout</a></li>
                     </ul>
-                </li>
+                </li> --}}
+                @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            {{-- @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif --}}
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                            </li>
+                        @endguest
             </ul>
         </nav>
         <div id="layoutSidenav">
@@ -47,22 +89,22 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            {{-- <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <div class="sb-sidenav-menu-heading">Interface</div> --}}
                             <a class="nav-link collapsed" href="{{route('slider.index')}}" >
                                 <div class="sb-nav-link-icon"><i class="bi bi-file-easel"></i></div>
                                 Slider
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
                                 <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
                                 Notice
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
+                            </a> --}}
                             <a class="nav-link collapsed" href="{{route('form.index')}}" >
                                 <div class="sb-nav-link-icon"><i class="bi bi-bell"></i></div>
                                 Form
@@ -78,26 +120,26 @@
                                 Events
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Staff
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
+                            </a> --}}
                             <a class="nav-link collapsed" href="{{route('scheme.index')}}"  >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Scheme
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            <a class="nav-link collapsed" href="{{route('facilities.index')}}" >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
-                                Online Facilities
+                                Facilities
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" >
+                            {{-- <a class="nav-link collapsed" href="#" >
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Meetings
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
+                            </a> --}}
                             <a class="nav-link collapsed" href="{{route('news.index')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 News
@@ -106,10 +148,10 @@
                            
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
+                    {{-- <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         User
-                    </div>
+                    </div> --}}
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -130,7 +172,9 @@
                 </footer>
             </div>
         </div>
-       
+
+
+        @yield('scripts')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{asset('assets/js/admin.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

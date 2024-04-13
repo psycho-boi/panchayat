@@ -90,6 +90,24 @@
 
 
                         <div class="form-group row">
+                            <label for="start_datetime" class="col-md-4 col-form-label text-md-right">{{ __('Start Date and Time') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="start_datetime" type="datetime-local" class="form-control @error('start_datetime') is-invalid @enderror" name="start_datetime" value="{{ old('start_datetime') }}" required>
+                            </div>
+                        </div>
+
+                        <!-- End Date and Time -->
+                        <div class="form-group row">
+                            <label for="end_datetime" class="col-md-4 col-form-label text-md-right">{{ __('End Date and Time') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="end_datetime" type="datetime-local" class="form-control @error('end_datetime') is-invalid @enderror" name="end_datetime" value="{{ old('end_datetime') }}" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="images" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
 
                             <div class="col-md-6">

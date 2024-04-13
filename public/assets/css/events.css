@@ -10,7 +10,7 @@
 }
 
 .blog-home5 .card-title {
-	font-size: 18px;
+	font-size: 25px;
 }
 
 .blog-home5 .subtitle {
@@ -31,6 +31,12 @@
   transition: 0.2s ease-in;
   height: 55%;
 }
+
+.blog-home5 .card-img {
+  height: 200px; /* Adjust this value according to your preference */
+  object-fit: cover; /* This property ensures the image covers the entire container */
+}
+
 
 .blog-home5 .b-h-box .card-title {
     color: #ffffff;

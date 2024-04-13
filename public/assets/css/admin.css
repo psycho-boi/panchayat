@@ -11251,3 +11251,21 @@ body {
 td > img{
   height: 120px;
 }
+
+
+
+
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-item:hover .deactivate-photo {
+  opacity: 1;
+}
+
+.deactivate-photo {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

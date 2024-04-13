@@ -2,6 +2,7 @@
 
 
 @section('content')
+
 <div style="height: 7rem">
 
 </div>
@@ -13,10 +14,10 @@
      </div>
     </div>
 
-    <div class="container pb-5">
+    <div class="container pb-2 pt-4 mt-4">
       <ul class="list-group">
         @foreach ($formItem as $item)
-            <a href="{{ route('form.doc', ['form_url' => $item->docs_url]) }}"> <h4> <li class="list-group-item" style="color: rgb(53, 53, 236)">{{$item->forms_title}} </li> </h4>  </a>
+            <a target="_blank" href="{{ route('form.doc', ['form_url' => $item->docs_url]) }}"> <h5> <li class="list-group-item" style="color: rgb(53, 53, 236)">{{$item->forms_title}} </li> </h5>  </a>
         @endforeach
         
       </ul>

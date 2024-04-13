@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('location');
             $table->text('description');
+            $table->dateTime('start_datetime');
+            $table->dateTime('end_datetime');
             $table->boolean( 'is_active' )->default( true );
             $table->id('event_id');
             $table->timestamps();

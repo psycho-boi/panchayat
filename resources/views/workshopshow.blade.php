@@ -28,6 +28,7 @@
             <div class="row">
                 <div class="col">
                     <h2 class="sub-heading">{{ $workshop->title }}</h2>
+                    <p style="font-weight: bold">{{$workshop->start_datetime}}</p>
                     <p class="">{{ $workshop->description }}</p>
                 </div>
             </div>
@@ -48,7 +49,7 @@
             <!-- Display other related images -->
             @if ($images->isNotEmpty())
             <div class="related-images">
-                <h2>Additional Images</h2>
+                <h3 >Additional Images</h3>
                 <div class="row">
                     @foreach ($images as $image)
                     <div class="col-lg-4 col-md-6 col-sm-12">

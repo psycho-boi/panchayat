@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class StaffController extends Controller
 {
+
+    public function list()
+    {
+        return view('staff');
+    }
     /**
      * Display a listing of the resource.
      */

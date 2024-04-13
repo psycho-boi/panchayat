@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->string('title');
             $table->text('description');
-            $table->string('orderNo');
+            $table->string('orderNo')->default(1);
             $table->boolean( 'is_active' )->default( true );
             $table->id('slide_id');
             $table->timestamps();

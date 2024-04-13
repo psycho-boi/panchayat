@@ -19,13 +19,13 @@
             @foreach ($eventItem as $event)
             <div class="col-12 col-lg-4">
             <article>
-                <div class="card border-0 pb-4">
+                <div class="card border-0 pb-4 align-item-center justify-content-center text-center">
                   <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
                     <a href="{{route('event.display', ['id' => $event->event_id])}}">
                         @if ($event->image_url)
-                            <img class="img-fluid bsb-scale bsb-hover-scale-up" src="{{asset('storage/'. $event->image_url)}}" alt="">
+                            <img style="height: 12rem;object-fit: cover" class="img-fluid bsb-scale bsb-hover-scale-up" src="{{asset(str_replace('public/', 'storage/', $event->image_url))}}" alt="">
                         @else
-                            <img class="img-fluid " src="{{asset('assets/images/thumb.png')}}" alt="Image Description" />
+                            <img style="height: 12rem;object-fit: cover" class="img-fluid " src="{{asset('assets/images/thumb.png')}}" alt="Image Description" />
                         @endif
                     </a>
                     <figcaption>

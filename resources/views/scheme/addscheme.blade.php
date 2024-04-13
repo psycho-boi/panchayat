@@ -77,7 +77,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Eligibility') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="Eligibility" class="form-control @error('address') is-invalid @enderror" name="scheme_eligibility" required>{{ old('scheme_egligibility') }}</textarea>
+                                <textarea id="Eligibility" class="form-control @error('address') is-invalid @enderror" name="scheme_eligibility" required>{{ old('scheme_eligibility') }}</textarea>
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('eligibility');
+            $table->dateTime('start_datetime');
+            $table->dateTime('end_datetime');
             $table->boolean( 'is_active' )->default( true );
             $table->id('scheme_id');
             $table->timestamps();

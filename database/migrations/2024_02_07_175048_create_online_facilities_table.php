@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('online_facilities', function (Blueprint $table) {
-            $table->string('name');
-            $table->text('additionalDetails');
-            $table->integer('rent');
+            $table->string('title');
+            $table->text('description');
+            // $table->integer('rent');
             $table->boolean( 'is_active' )->default( true );
             $table->id('facility_id');
             $table->timestamps();

@@ -93,14 +93,16 @@
                             <label for="images" class="col-md-4 col-form-label text-md-right">{{ __('Images') }}</label>
 
                             <div class="col-md-6">
+                                {{-- <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="news_photos[]" multiple > --}}
                                 <input id="images" type="file" class="form-control-file @error('images') is-invalid @enderror" name="news_photos[]" multiple >
-                                <ul id="image-list"></ul>
 
+                                <ul id="image-list"></ul>
+{{-- 
                                 @error('images')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                             </div>
                         </div>
 

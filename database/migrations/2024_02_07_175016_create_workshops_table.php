@@ -15,7 +15,9 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('location');
-            $table->boolean( 'is_active' )->default( true );
+            $table->dateTime('start_datetime');
+            $table->dateTime('end_datetime');
+            $table->boolean('is_active')->default(true);
             $table->id('workshop_id');
             $table->timestamps();
         });

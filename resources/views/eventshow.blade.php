@@ -28,6 +28,7 @@
             <div class="row">
                 <div class="col">
                     <h2 class="sub-heading">{{ $event->title }}</h2>
+                    <p style="font-weight: bold">{{$event->start_datetime}}</p>
                     <p class="">{{ $event->description }}</p>
                 </div>
             </div>
