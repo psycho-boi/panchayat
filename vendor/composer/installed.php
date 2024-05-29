@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '6693b93c562493a6e341d95d5d2dcb87a0193ab4',
+        'reference' => 'c027de746c434073a4a070adf8070ce42239441c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'bordoni/phpass' => array(
+            'pretty_version' => '0.3.6',
+            'version' => '0.3.6.0',
+            'reference' => '12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bordoni/phpass',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
             'version' => '0.11.0.0',
@@ -92,7 +101,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'filp/whoops' => array(
             'pretty_version' => '2.15.4',
@@ -165,6 +174,12 @@
             'install_path' => __DIR__ . '/../hamcrest/hamcrest-php',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'hautelook/phpass' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '0.3.*',
+            ),
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -364,6 +379,21 @@
                 0 => 'v10.40.0',
             ),
         ),
+        'jgrossi/corcel' => array(
+            'pretty_version' => 'v7.0.0',
+            'version' => '7.0.0.0',
+            'reference' => 'eba55da9a8179a868438f09b6f31f95b9bec5f8a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jgrossi/corcel',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'juniorgrossi/corcel' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v7.0.0',
+            ),
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -382,7 +412,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6693b93c562493a6e341d95d5d2dcb87a0193ab4',
+            'reference' => 'c027de746c434073a4a070adf8070ce42239441c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1279,6 +1309,15 @@
             'install_path' => __DIR__ . '/../theseer/tokenizer',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'thunderer/shortcode' => array(
+            'pretty_version' => 'v0.7.5',
+            'version' => '0.7.5.0',
+            'reference' => 'a4fee30613bd46efb421f8305aff0466a3268a99',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../thunderer/shortcode',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'tijsverkoyen/css-to-inline-styles' => array(
             'pretty_version' => 'v2.2.7',

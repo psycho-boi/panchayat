@@ -15,24 +15,24 @@
                   <img style="height: 8rem" src="{{asset('assets/images/logo1.png')}}" alt="">
               </div>
               <div class="col-lg-8 col-md-6 col-sm-8 text-center text-md-left" style="">
-                  <h1 class="" style="color: black">Village Panchayat Dharbandora</h1>
+                  <h1 class="" style="color: black">Village Panchayat Pissurlem</h1>
                   <h4 class="" style="color: rgb(116, 110, 110)">Government of Goa </h4>
               </div>
           </div>
       </div>
       <li class="translate-container">
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
-        function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'hi,mr,gom,en',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-        </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </li>
+            <div id="google_translate_element"></div>
+            <script type="text/javascript">
+            function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'hi,mr,gom,en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                  }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      </li>
   </div>
   <header class="site-navbar py-4 js-sticky-header site-navbar-target bg-dark" role="banner">
       <div class="container">
@@ -66,8 +66,8 @@
                           </li>
                           <li class="has-children">
                               <a href="" class="nav-link text-left text-light">Activities</a>
-                              <ul class="dropdown">
-                                  <li><a href="{{route('workshop.list')}}">Workshop</a></li>
+                              <ul class="dropdown text-sm-white text-md-white">
+                                  <li><a class="" href="{{route('workshop.list')}}">Workshop</a></li>
                                   {{-- <li><a href="{{route('scheme.list')}}">Scheme</a></li> --}}
                                   <li><a href="{{route('event.list')}}">event</a></li>
                               </ul>
@@ -83,6 +83,16 @@
                           </li>
                       </ul>
                   </nav>
+                  <div class="ml-auto">
+                    <div class="social-wrap">
+                      {{-- <a href="#"><span class="icon-facebook"></span></a>
+                      <a href="#"><span class="icon-twitter"></span></a>
+                      <a href="#"><span class="icon-linkedin"></span></a> --}}
+        
+                      <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+                        class="icon-menu h3"></span></a>
+                    </div>
+                  </div>
               </div>
           </div>
       </div>

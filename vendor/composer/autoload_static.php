@@ -53,6 +53,7 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
+            'Thunder\\Shortcode\\' => 18,
             'Tests\\' => 6,
             'Termwind\\' => 9,
         ),
@@ -168,6 +169,8 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'C' => 
         array (
             'Cron\\' => 5,
+            'Corcel\\Tests\\' => 13,
+            'Corcel\\' => 7,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -197,6 +200,10 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
+        ),
+        'Thunder\\Shortcode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thunderer/shortcode/src',
         ),
         'Tests\\' => 
         array (
@@ -519,6 +526,14 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Corcel\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jgrossi/corcel/tests',
+        ),
+        'Corcel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jgrossi/corcel/src',
+        ),
         'Carbon\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
@@ -538,9 +553,20 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'Hautelook' => 
+            array (
+                0 => __DIR__ . '/..' . '/bordoni/phpass/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -550,10 +576,13 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\ComplaintController' => __DIR__ . '/../..' . '/app/Http/Controllers/ComplaintController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DocController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocController.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
+        'App\\Http\\Controllers\\FacilitiesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FacilitiesController.php',
         'App\\Http\\Controllers\\FormController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\HomepageController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomepageController.php',
+        'App\\Http\\Controllers\\ImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/ImageController.php',
         'App\\Http\\Controllers\\MeetingController' => __DIR__ . '/../..' . '/app/Http/Controllers/MeetingController.php',
         'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\NoticeController' => __DIR__ . '/../..' . '/app/Http/Controllers/NoticeController.php',
@@ -573,6 +602,7 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Complaint' => __DIR__ . '/../..' . '/app/Models/Complaint.php',
         'App\\Models\\Designation' => __DIR__ . '/../..' . '/app/Models/Designation.php',
@@ -694,6 +724,70 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'Carbon\\TranslatorImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
         'Carbon\\TranslatorStrongTypeInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Corcel\\Concerns\\AdvancedCustomFields' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/AdvancedCustomFields.php',
+        'Corcel\\Concerns\\Aliases' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/Aliases.php',
+        'Corcel\\Concerns\\CustomTimestamps' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/CustomTimestamps.php',
+        'Corcel\\Concerns\\MetaFields' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/MetaFields.php',
+        'Corcel\\Concerns\\OrderScopes' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/OrderScopes.php',
+        'Corcel\\Concerns\\Shortcodes' => __DIR__ . '/..' . '/jgrossi/corcel/src/Concerns/Shortcodes.php',
+        'Corcel\\Corcel' => __DIR__ . '/..' . '/jgrossi/corcel/src/Corcel.php',
+        'Corcel\\Database' => __DIR__ . '/..' . '/jgrossi/corcel/src/Database.php',
+        'Corcel\\Laravel\\Auth\\AuthUserProvider' => __DIR__ . '/..' . '/jgrossi/corcel/src/Laravel/Auth/AuthUserProvider.php',
+        'Corcel\\Laravel\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/jgrossi/corcel/src/Laravel/Auth/ResetsPasswords.php',
+        'Corcel\\Laravel\\CorcelServiceProvider' => __DIR__ . '/..' . '/jgrossi/corcel/src/Laravel/CorcelServiceProvider.php',
+        'Corcel\\Model' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model.php',
+        'Corcel\\Model\\Attachment' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Attachment.php',
+        'Corcel\\Model\\Builder\\CommentBuilder' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Builder/CommentBuilder.php',
+        'Corcel\\Model\\Builder\\PostBuilder' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Builder/PostBuilder.php',
+        'Corcel\\Model\\Builder\\TaxonomyBuilder' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Builder/TaxonomyBuilder.php',
+        'Corcel\\Model\\Collection\\MetaCollection' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Collection/MetaCollection.php',
+        'Corcel\\Model\\Comment' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Comment.php',
+        'Corcel\\Model\\CustomLink' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/CustomLink.php',
+        'Corcel\\Model\\Menu' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Menu.php',
+        'Corcel\\Model\\MenuItem' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/MenuItem.php',
+        'Corcel\\Model\\Meta\\CommentMeta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/CommentMeta.php',
+        'Corcel\\Model\\Meta\\Meta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/Meta.php',
+        'Corcel\\Model\\Meta\\PostMeta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/PostMeta.php',
+        'Corcel\\Model\\Meta\\TermMeta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/TermMeta.php',
+        'Corcel\\Model\\Meta\\ThumbnailMeta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/ThumbnailMeta.php',
+        'Corcel\\Model\\Meta\\UserMeta' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Meta/UserMeta.php',
+        'Corcel\\Model\\Option' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Option.php',
+        'Corcel\\Model\\Page' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Page.php',
+        'Corcel\\Model\\Post' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Post.php',
+        'Corcel\\Model\\Tag' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Tag.php',
+        'Corcel\\Model\\Taxonomy' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Taxonomy.php',
+        'Corcel\\Model\\Term' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/Term.php',
+        'Corcel\\Model\\TermRelationship' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/TermRelationship.php',
+        'Corcel\\Model\\User' => __DIR__ . '/..' . '/jgrossi/corcel/src/Model/User.php',
+        'Corcel\\Services\\PasswordService' => __DIR__ . '/..' . '/jgrossi/corcel/src/Services/PasswordService.php',
+        'Corcel\\Shortcode' => __DIR__ . '/..' . '/jgrossi/corcel/src/Shortcode.php',
+        'Corcel\\Tests\\TestCase' => __DIR__ . '/..' . '/jgrossi/corcel/tests/TestCase.php',
+        'Corcel\\Tests\\Unit\\AuthenticationTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/AuthenticationTest.php',
+        'Corcel\\Tests\\Unit\\Concerns\\CustomTimestampsTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Concerns/CustomTimestampsTest.php',
+        'Corcel\\Tests\\Unit\\Concerns\\ShortcodesTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Concerns/ShortcodesTest.php',
+        'Corcel\\Tests\\Unit\\DatabaseTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/DatabaseTest.php',
+        'Corcel\\Tests\\Unit\\Laravel\\Auth\\AuthUserProviderTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Laravel/Auth/AuthUserProviderTest.php',
+        'Corcel\\Tests\\Unit\\Laravel\\Auth\\ResetPasswordsTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Laravel/Auth/ResetPasswordsTest.php',
+        'Corcel\\Tests\\Unit\\Laravel\\LaravelConfigTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Laravel/LaravelConfigTest.php',
+        'Corcel\\Tests\\Unit\\Model\\AttachmentTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/AttachmentTest.php',
+        'Corcel\\Tests\\Unit\\Model\\CommentTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/CommentTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Contracts\\AuthenticatableTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Contracts/AuthenticatableTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Contracts\\CanResetPasswordTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Contracts/CanResetPasswordTest.php',
+        'Corcel\\Tests\\Unit\\Model\\MenuTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/MenuTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Meta\\CommentMetaTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Meta/CommentMetaTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Meta\\MetaTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Meta/MetaTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Meta\\PostMetaTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Meta/PostMetaTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Meta\\TermMetaTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Meta/TermMetaTest.php',
+        'Corcel\\Tests\\Unit\\Model\\Meta\\UserMetaTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/Meta/UserMetaTest.php',
+        'Corcel\\Tests\\Unit\\Model\\OptionTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/OptionTest.php',
+        'Corcel\\Tests\\Unit\\Model\\PostTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/PostTest.php',
+        'Corcel\\Tests\\Unit\\Model\\PostTypeTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/PostTypeTest.php',
+        'Corcel\\Tests\\Unit\\Model\\TaxonomyTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/TaxonomyTest.php',
+        'Corcel\\Tests\\Unit\\Model\\TermTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/TermTest.php',
+        'Corcel\\Tests\\Unit\\Model\\ThumbnailTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/ThumbnailTest.php',
+        'Corcel\\Tests\\Unit\\Model\\UserTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Model/UserTest.php',
+        'Corcel\\Tests\\Unit\\Traits\\AliasesTraitTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Traits/AliasesTraitTest.php',
+        'Corcel\\Tests\\Unit\\Traits\\HasMetaFieldsTest' => __DIR__ . '/..' . '/jgrossi/corcel/tests/Unit/Traits/HasMetaFieldsTest.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -1583,6 +1677,7 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Hautelook\\Phpass\\PasswordHash' => __DIR__ . '/..' . '/bordoni/phpass/src/Hautelook/Phpass/PasswordHash.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Events\\GateEvaluated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Events/GateEvaluated.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
@@ -6553,6 +6648,51 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'Thunder\\Shortcode\\EventContainer\\EventContainer' => __DIR__ . '/..' . '/thunderer/shortcode/src/EventContainer/EventContainer.php',
+        'Thunder\\Shortcode\\EventContainer\\EventContainerInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/EventContainer/EventContainerInterface.php',
+        'Thunder\\Shortcode\\EventHandler\\FilterRawEventHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/EventHandler/FilterRawEventHandler.php',
+        'Thunder\\Shortcode\\EventHandler\\ReplaceJoinEventHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/EventHandler/ReplaceJoinEventHandler.php',
+        'Thunder\\Shortcode\\Event\\FilterShortcodesEvent' => __DIR__ . '/..' . '/thunderer/shortcode/src/Event/FilterShortcodesEvent.php',
+        'Thunder\\Shortcode\\Event\\ReplaceShortcodesEvent' => __DIR__ . '/..' . '/thunderer/shortcode/src/Event/ReplaceShortcodesEvent.php',
+        'Thunder\\Shortcode\\Events' => __DIR__ . '/..' . '/thunderer/shortcode/src/Events.php',
+        'Thunder\\Shortcode\\HandlerContainer\\HandlerContainer' => __DIR__ . '/..' . '/thunderer/shortcode/src/HandlerContainer/HandlerContainer.php',
+        'Thunder\\Shortcode\\HandlerContainer\\HandlerContainerInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/HandlerContainer/HandlerContainerInterface.php',
+        'Thunder\\Shortcode\\HandlerContainer\\ImmutableHandlerContainer' => __DIR__ . '/..' . '/thunderer/shortcode/src/HandlerContainer/ImmutableHandlerContainer.php',
+        'Thunder\\Shortcode\\Handler\\ContentHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/ContentHandler.php',
+        'Thunder\\Shortcode\\Handler\\DeclareHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/DeclareHandler.php',
+        'Thunder\\Shortcode\\Handler\\EmailHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/EmailHandler.php',
+        'Thunder\\Shortcode\\Handler\\NameHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/NameHandler.php',
+        'Thunder\\Shortcode\\Handler\\NullHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/NullHandler.php',
+        'Thunder\\Shortcode\\Handler\\PlaceholderHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/PlaceholderHandler.php',
+        'Thunder\\Shortcode\\Handler\\RawHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/RawHandler.php',
+        'Thunder\\Shortcode\\Handler\\SerializerHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/SerializerHandler.php',
+        'Thunder\\Shortcode\\Handler\\UrlHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/UrlHandler.php',
+        'Thunder\\Shortcode\\Handler\\WrapHandler' => __DIR__ . '/..' . '/thunderer/shortcode/src/Handler/WrapHandler.php',
+        'Thunder\\Shortcode\\Parser\\ParserInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Parser/ParserInterface.php',
+        'Thunder\\Shortcode\\Parser\\RegexParser' => __DIR__ . '/..' . '/thunderer/shortcode/src/Parser/RegexParser.php',
+        'Thunder\\Shortcode\\Parser\\RegularParser' => __DIR__ . '/..' . '/thunderer/shortcode/src/Parser/RegularParser.php',
+        'Thunder\\Shortcode\\Parser\\WordpressParser' => __DIR__ . '/..' . '/thunderer/shortcode/src/Parser/WordpressParser.php',
+        'Thunder\\Shortcode\\Processor\\Processor' => __DIR__ . '/..' . '/thunderer/shortcode/src/Processor/Processor.php',
+        'Thunder\\Shortcode\\Processor\\ProcessorContext' => __DIR__ . '/..' . '/thunderer/shortcode/src/Processor/ProcessorContext.php',
+        'Thunder\\Shortcode\\Processor\\ProcessorInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Processor/ProcessorInterface.php',
+        'Thunder\\Shortcode\\Serializer\\JsonSerializer' => __DIR__ . '/..' . '/thunderer/shortcode/src/Serializer/JsonSerializer.php',
+        'Thunder\\Shortcode\\Serializer\\SerializerInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Serializer/SerializerInterface.php',
+        'Thunder\\Shortcode\\Serializer\\TextSerializer' => __DIR__ . '/..' . '/thunderer/shortcode/src/Serializer/TextSerializer.php',
+        'Thunder\\Shortcode\\Serializer\\XmlSerializer' => __DIR__ . '/..' . '/thunderer/shortcode/src/Serializer/XmlSerializer.php',
+        'Thunder\\Shortcode\\Serializer\\YamlSerializer' => __DIR__ . '/..' . '/thunderer/shortcode/src/Serializer/YamlSerializer.php',
+        'Thunder\\Shortcode\\ShortcodeFacade' => __DIR__ . '/..' . '/thunderer/shortcode/src/ShortcodeFacade.php',
+        'Thunder\\Shortcode\\Shortcode\\AbstractShortcode' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/AbstractShortcode.php',
+        'Thunder\\Shortcode\\Shortcode\\ParsedShortcode' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/ParsedShortcode.php',
+        'Thunder\\Shortcode\\Shortcode\\ParsedShortcodeInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/ParsedShortcodeInterface.php',
+        'Thunder\\Shortcode\\Shortcode\\ProcessedShortcode' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/ProcessedShortcode.php',
+        'Thunder\\Shortcode\\Shortcode\\ReplacedShortcode' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/ReplacedShortcode.php',
+        'Thunder\\Shortcode\\Shortcode\\Shortcode' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/Shortcode.php',
+        'Thunder\\Shortcode\\Shortcode\\ShortcodeInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Shortcode/ShortcodeInterface.php',
+        'Thunder\\Shortcode\\Syntax\\CommonSyntax' => __DIR__ . '/..' . '/thunderer/shortcode/src/Syntax/CommonSyntax.php',
+        'Thunder\\Shortcode\\Syntax\\Syntax' => __DIR__ . '/..' . '/thunderer/shortcode/src/Syntax/Syntax.php',
+        'Thunder\\Shortcode\\Syntax\\SyntaxBuilder' => __DIR__ . '/..' . '/thunderer/shortcode/src/Syntax/SyntaxBuilder.php',
+        'Thunder\\Shortcode\\Syntax\\SyntaxInterface' => __DIR__ . '/..' . '/thunderer/shortcode/src/Syntax/SyntaxInterface.php',
+        'Thunder\\Shortcode\\Utility\\RegexBuilderUtility' => __DIR__ . '/..' . '/thunderer/shortcode/src/Utility/RegexBuilderUtility.php',
         'TijsVerkoyen\\CssToInlineStyles\\CssToInlineStyles' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/CssToInlineStyles.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Processor.php',
@@ -6593,6 +6733,7 @@ class ComposerStaticInit01fd30d512973b86f47e9457c11a6f71
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit01fd30d512973b86f47e9457c11a6f71::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit01fd30d512973b86f47e9457c11a6f71::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit01fd30d512973b86f47e9457c11a6f71::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit01fd30d512973b86f47e9457c11a6f71::$classMap;
 
         }, null, ClassLoader::class);
