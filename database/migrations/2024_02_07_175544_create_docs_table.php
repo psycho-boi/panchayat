@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('doc_id');
             $table->timestamps();
             $table->integer('foreign_key');
+            $table->boolean( 'is_active' )->default( true );
         });
     }
 

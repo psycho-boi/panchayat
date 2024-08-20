@@ -22,14 +22,14 @@ class WorkshopController extends Controller
                 // ->where('images.type', '=', 'workshop')
                 // ->where('images.is_active', '=',  '1')
                 // ->take(1);
-                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = workshops.workshop_id and type = "workshop" and is_active="1")');
+                ->whereRaw('images.image_id = (select MIN(image_id) from images where foreign_key = workshops.workshop_id and type = "workshop" and images.is_active="1")');
         })
         ->leftJoin('docs', function ($join) {
             $join->on('workshops.workshop_id', '=', 'docs.foreign_key')
                 // ->where('docs.type', '=', 'workshop')
                 // ->where('docs.is_active', '=', '1')
                 // ->take(1);
-                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = workshops.workshop_id and type = "workshop" and is_active="1")');
+                ->whereRaw('docs.doc_id = (select MIN(doc_id) from docs where foreign_key = workshops.workshop_id and type = "workshop" and docs.is_active="1")');
         })
         ->where('workshops.is_active', '!=', '0')
         ->select('workshops.title as workshop_title', 'workshops.description', 'workshops.workshop_id as workshop_id', 'images.url as image_url', 'docs.url as doc_url')
@@ -54,7 +54,7 @@ class WorkshopController extends Controller
     public function display($id){
         $workshop = DB::table('workshops')
         ->where('workshop_id', $id)
-        ->where('is_active', '!=', 0)
+        ->where('workshops.is_active', '!=', 0)
         ->first();
 
 

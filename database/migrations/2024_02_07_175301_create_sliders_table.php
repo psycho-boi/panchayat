@@ -16,7 +16,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('orderNo')->default(1);
             $table->boolean( 'is_active' )->default( true );
-            $table->id('slide_id');
+            $table->id('slider_id');
             $table->timestamps();
         });
     }
