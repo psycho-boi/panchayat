@@ -52,6 +52,41 @@ This project is a dynamic web application built using the Laravel framework for 
    git clone https://github.com/yourusername/your-repository.git
 
 
+ 2. Navigate into the project directory:
+
+    ```bash
+    Copy code
+    cd your-repository
+
+  3. Install dependencies:
+
+    ```bash
+    Copy code
+    composer install
+
+  4.Set up the environment file:
+
+    ```bash
+    Copy code
+    cp .env.example .env
+    
+  5. Generate the application key:
+
+    ```bash
+    Copy code
+    php artisan key:generate
+
+  6.Run migrations to set up the database:
+
+    ```bash
+    Copy code
+    php artisan migrate
+    
+  7. Start the local development server:
+
+    ```bash
+    php artisan serve
+
 
 
 
