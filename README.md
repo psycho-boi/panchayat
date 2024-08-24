@@ -7,6 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+Dynamic Laravel Web Application for Pissurlem Panchayat
+Project Overview
+This project is a dynamic web application built using the Laravel framework for Pissurlem Panchayat. It provides a comprehensive platform for managing and displaying various content sections relevant to the panchayat.
+
+Key Features
+Admin Panel:
+
+Secure login system for administrators.
+Interface for managing and updating all site content.
+Content Sections:
+
+News Management:
+Create, update, and archive news articles.
+Categorize and display news items.
+Events Management:
+Schedule and manage events.
+Provide detailed event information and updates.
+Staff Directory:
+Add and manage staff profiles with relevant details.
+Forms Management:
+Public submission forms for feedback, applications, and requests.
+Database Design:
+
+Separate tables for each content section to organize data efficiently.
+Dedicated table for images and documents, linked to relevant content tables for seamless media management.
+Technology Stack:
+
+Backend: Laravel framework.
+Database: MySQL.
+Frontend: Blade templating for dynamic views.
+Responsive Design:
+
+Designed to be responsive and accessible across various devices and screen sizes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
