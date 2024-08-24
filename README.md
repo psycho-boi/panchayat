@@ -55,36 +55,31 @@ This project is a dynamic web application built using the Laravel framework for 
  2. Navigate into the project directory:
 
     ```bash
-    Copy code
     cd your-repository
 
-  3. Install dependencies:
+ 3. Install dependencies:
 
-    ```bash
-    Copy code
+     ```bash
     composer install
 
-  4.Set up the environment file:
+  4. Set up the environment file:
 
-    ```bash
-    Copy code
-    cp .env.example .env
+     ```bash
+     cp .env.example .env
     
   5. Generate the application key:
 
-    ```bash
-    Copy code
+     ```bash
     php artisan key:generate
 
-  6.Run migrations to set up the database:
+  6. Run migrations to set up the database:
 
-    ```bash
-    Copy code
+     ```bash
     php artisan migrate
     
   7. Start the local development server:
 
-    ```bash
+     ```bash
     php artisan serve
 
 
