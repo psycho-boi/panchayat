@@ -144,7 +144,7 @@
                 <div class="feature-1 ">
                   <div class="feature-1-content pt-5 mt-5">
                     <h2>Know more</h2>
-                    <p><a href="{{route('staff.list')}}" class="btn btn-primary px-4 rounded-0">view</a></p>
+                    <p><a href="{{route('about')}}" class="btn btn-primary px-4 rounded-0">view</a></p>
                   </div>
                 </div> 
               </div>

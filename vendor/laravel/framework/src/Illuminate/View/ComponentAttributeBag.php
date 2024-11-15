@@ -4,7 +4,6 @@ namespace Illuminate\View;
 
 use ArrayAccess;
 use ArrayIterator;
-use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\HtmlString;
@@ -13,9 +12,10 @@ use Illuminate\Support\Traits\Conditionable;
 use Illuminate\Support\Traits\Macroable;
 use IteratorAggregate;
 use JsonSerializable;
+use Stringable;
 use Traversable;
 
-class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate, JsonSerializable, Htmlable
+class ComponentAttributeBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Htmlable, Stringable
 {
     use Conditionable, Macroable;
 
@@ -34,7 +34,17 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
      */
     public function __construct(array $attributes = [])
     {
-        $this->attributes = $attributes;
+        $this->setAttributes($attributes);
+    }
+
+    /**
+     * Get all of the attribute values.
+     *
+     * @return array
+     */
+    public function all()
+    {
+        return $this->attributes;
     }
 
     /**
@@ -207,7 +217,7 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
      */
     public function onlyProps($keys)
     {
-        return $this->only($this->extractPropNames($keys));
+        return $this->only(static::extractPropNames($keys));
     }
 
     /**
@@ -218,27 +228,7 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
      */
     public function exceptProps($keys)
     {
-        return $this->except($this->extractPropNames($keys));
-    }
-
-    /**
-     * Extract prop names from given keys.
-     *
-     * @param  mixed|array  $keys
-     * @return array
-     */
-    protected function extractPropNames($keys)
-    {
-        $props = [];
-
-        foreach ($keys as $key => $defaultValue) {
-            $key = is_numeric($key) ? $defaultValue : $key;
-
-            $props[] = $key;
-            $props[] = Str::kebab($key);
-        }
-
-        return $props;
+        return $this->except(static::extractPropNames($keys));
     }
 
     /**
@@ -402,6 +392,26 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
     }
 
     /**
+     * Extract "prop" names from given keys.
+     *
+     * @param  array  $keys
+     * @return array
+     */
+    public static function extractPropNames(array $keys)
+    {
+        $props = [];
+
+        foreach ($keys as $key => $default) {
+            $key = is_numeric($key) ? $default : $key;
+
+            $props[] = $key;
+            $props[] = Str::kebab($key);
+        }
+
+        return $props;
+    }
+
+    /**
      * Get content as a string of HTML.
      *
      * @return string
@@ -488,16 +498,6 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
     }
 
     /**
-     * Convert the object into an array.
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return $this->attributes;
-    }
-
-    /**
      * Implode the attributes into a single HTML ready string.
      *
      * @return string
@@ -512,8 +512,7 @@ class ComponentAttributeBag implements Arrayable, ArrayAccess, IteratorAggregate
             }
 
             if ($value === true) {
-                // Exception for Alpine...
-                $value = $key === 'x-data' ? '' : $key;
+                $value = $key === 'x-data' || str_starts_with($key, 'wire:') ? '' : $key;
             }
 
             $string .= ' '.$key.'="'.str_replace('"', '\\"', trim($value)).'"';

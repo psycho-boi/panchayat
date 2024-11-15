@@ -51,6 +51,18 @@ class InvokedProcess implements InvokedProcessContract
     }
 
     /**
+     * Stop the process if it is still running.
+     *
+     * @param  float  $timeout
+     * @param  int|null  $signal
+     * @return int|null
+     */
+    public function stop(float $timeout = 10, ?int $signal = null)
+    {
+        return $this->process->stop($timeout, $signal);
+    }
+
+    /**
      * Determine if the process is still running.
      *
      * @return bool
@@ -108,7 +120,7 @@ class InvokedProcess implements InvokedProcessContract
      *
      * @throws \Illuminate\Process\Exceptions\ProcessTimedOutException
      */
-    public function wait(callable $output = null)
+    public function wait(?callable $output = null)
     {
         try {
             $this->process->wait($output);

@@ -37,6 +37,22 @@ class FormController extends Controller
     }
 
 
+    public function showDoc($doc_url)
+    {
+        // Assuming the documents are stored in the 'storage/docs' directory
+        $docPath = storage_path( $doc_url);
+
+        // Check if the document file exists
+        if (!file_exists($docPath)) {
+            abort(404);
+        }
+
+        // Return a view to display the document
+        return response()->file($docPath);
+    }
+
+
+
     public function index()
     {
         $formItem = DB::table('forms')
@@ -66,6 +82,7 @@ class FormController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
     public function create()
     {
         //

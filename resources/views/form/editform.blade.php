@@ -41,7 +41,7 @@
             <div class="form-group row mb-4">
                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control "  name="form_title" value="{{ $form->title  }}" required autocomplete="name" autofocus>
+                    <input id="name" type="text" class="form-control "  name="form_title" value="{{ $form->Title  }}" required autocomplete="name" autofocus>
                 </div>
 
             </div>

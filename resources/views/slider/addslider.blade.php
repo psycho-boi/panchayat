@@ -58,7 +58,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="slider_content" required>{{ old('slider_content') }}</textarea>
+                                <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="slider_content" >{{ old('slider_content') }}</textarea>
                             </div>
                         </div>
 

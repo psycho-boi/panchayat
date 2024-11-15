@@ -2,6 +2,7 @@
 
 
 @section('content')
+{{-- @dd($formItem) --}}
 
 <div style="height: 7rem">
 
@@ -24,3 +25,4 @@
     </div>
 
 @endsection
+

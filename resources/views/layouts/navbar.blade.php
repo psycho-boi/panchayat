@@ -75,9 +75,9 @@
                           <li class="active">
                               <a href="{{route('facilities.list')}}" class="nav-link text-left text-light">Facilities</a>
                           </li>
-                          <li>
+                          {{-- <li>
                               <a href="{{route('contact')}}" class="nav-link text-left text-light">Contact us</a>
-                          </li>
+                          </li> --}}
                           <li>
                               
                           </li>

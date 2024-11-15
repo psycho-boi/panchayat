@@ -30,7 +30,7 @@ class SliderController extends Controller
         })
         ->where('sliders.is_active', '1')
         ->select('sliders.title as slider_title', 'sliders.description as slider_content', 'sliders.slider_id as slider_id', DB::raw('COALESCE(images.url, "default_image_url") as image_url'))
-        ->orderBy('sliders.created_at', 'desc')
+        ->orderBy('sliders.created_at', 'asc')
         ->get();
 
         $sliderItem->transform(function ($item) {
