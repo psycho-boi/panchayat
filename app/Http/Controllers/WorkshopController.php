@@ -6,7 +6,7 @@ use App\Models\Workshop;
 use App\Models\Image;
 use App\Models\Doc;
 use Illuminate\Http\Request;
-use Illuminate\support\facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class WorkshopController extends Controller
 {
