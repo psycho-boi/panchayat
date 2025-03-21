@@ -1,3 +1,44 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Base font settings */
+:root {
+  --font-primary: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-secondary: 'Open Sans', Arial, sans-serif;
+}
+
+/* Apply fonts to elements */
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+p, ul, ol, input, textarea, button {
+  font-family: var(--font-primary);
+}
+
+/* Font sizes */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+
+
+
+
+
 /* Base */
 body {
   line-height: 1.7;
@@ -13,8 +54,31 @@ body {
   background: #000;
   color: #fff; }
 
-.bg-tricolor{
+/* .bg-tricolor{
   background-image: linear-gradient(to right bottom, #a11500, #c43e4d, #d66c8c, #dd9bc0, #e3c8e5, #d3cbe7, #c5cce5, #bdcdde, #7dadbf, #388f92, #006e58, #004c17);
+} */
+
+.bg-tricolor {
+  background: linear-gradient(
+    135deg,
+    #ff9933 0%,    /* Saffron */
+    #ffffff 33%,   /* White */
+    #138808 100%   /* Green */
+  );
+  border-bottom: 2px solid #000080; /* Navy blue border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+/* Improve text contrast */
+.bg-tricolor h1 {
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.bg-tricolor h4 {
+  color: #333333;
+  font-weight: 500;
 }
 
 
